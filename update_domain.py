@@ -81,7 +81,7 @@ def push_to_github(updated_json):
         print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
 
 # 检查域名是否有效
-def is_valid_domain(url):
+def is_valid_domain_with_path(url):
     try:
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
@@ -95,11 +95,12 @@ def is_valid_domain(url):
         return False
 
 # 试错功能，测试一系列域名
-def test_domains(start_domain, num_tests=5):
+def test_domains(start_domain, path, num_tests=5):
     for i in range(num_tests):
-        domain = start_domain.replace("7463ck", f"{7463 + i}ck")
-        print(f"Testing domain: {domain}")
-        if is_valid_domain(f"http://{domain}"):
+        domain = start_domain.replace("7465ck", f"{7465 + i}ck")
+        full_url = f"http://{domain}{path}"
+        print(f"Testing domain with path: {full_url}")
+        if is_valid_domain_with_path(full_url):
             return domain  # 返回有效的域名
         time.sleep(2)  # 给服务器留出时间，避免过于频繁的请求
     return None  # 如果所有测试都失败，返回 None
@@ -108,9 +109,10 @@ def test_domains(start_domain, num_tests=5):
 def main():
     old_domain = "7465ck.cc"  # 假设要替换的旧域名
     start_domain = "7465ck.cc"  # 开始测试的域名
+    path = "/vodtype/9-2.html"  # 假设这是路径部分
 
     # 试错获取有效域名
-    valid_domain = test_domains(start_domain)
+    valid_domain = test_domains(start_domain, path)
     if valid_domain:
         # 获取 JSON 数据
         json_data = fetch_json()
