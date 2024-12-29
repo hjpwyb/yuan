@@ -4,7 +4,7 @@ import base64
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_TOKEN = "GH_TOKEN"  # 请在这里填写你的 GitHub Token
+GITHUB_TOKEN = "GH_TOKEN"  # 在这里填入你实际的 GitHub Token
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
@@ -87,7 +87,7 @@ def main():
     test_url = base_url
 
     # 进行试错，依次更换URL中的数字部分
-    for i in range(7465, 7480):  # 假设你想测试7465ck.cc到7470ck.cc这几个域名
+    for i in range(7465, 7470):  # 假设你想测试7465ck.cc到7470ck.cc这几个域名
         url_to_test = test_url.replace("7465ck.cc", f"{i}ck.cc")
         
         # 检查URL有效性
