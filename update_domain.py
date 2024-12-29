@@ -17,25 +17,45 @@ def fetch_json():
         print(f"Failed to fetch JSON. Status code: {response.status_code}")
         return None
 
-# 检查网页中是否包含有效的域名
-def find_valid_domain():
-    test_domains = ["7465ck.cc", "7473ck.cc", "example.com"]  # 你可以在这里添加更多的尝试域名
-    for domain in test_domains:
-        test_url = f"http://{domain}/vodtype/8-2.html"
-        try:
-            page = requests.get(test_url, headers=headers)
-            if page.status_code == 200:
-                print(f"Trying domain: {domain}")
-                # 如果网页内容包含"24小时在线匹配首次免费"，则返回该域名
-                if "24小时在线匹配首次免费" in page.text:
-                    print(f"Found valid domain: {domain}")
-                    return domain  # 返回有效的域名
-        except requests.exceptions.RequestException as e:
-            print(f"Error fetching test URL: {test_url} - {e}")
-    return None
+# 从JSON数据中提取所有的域名
+def extract_domains(json_data):
+    domains = set()
+    # 遍历JSON中的所有值，使用正则表达式提取域名
+    domain_pattern = re.compile(r"https?://([a-zA-Z0-9.-]+)")
+    
+    # 遍历 JSON 中的每个键值对，提取出所有的域名
+    for value in json_data.values():
+        if isinstance(value, str):
+            found_domains = domain_pattern.findall(value)
+            for domain in found_domains:
+                domains.add(domain)
+    
+    return list(domains)
+
+# 自动检测当前域名并选择替换
+def get_current_and_new_domain(json_data):
+    # 提取 JSON 中的所有域名
+    domains = extract_domains(json_data)
+    
+    if len(domains) < 2:
+        print("Insufficient domains found for replacement.")
+        return None, None
+    
+    # 假设 JSON 中有两个不同的域名，选择第一个作为当前域名
+    current_domain = domains[0]
+    
+    # 从所有找到的域名中移除当前域名，选择第二个作为新的域名
+    new_domain = domains[1] if len(domains) > 1 else None
+    
+    if new_domain:
+        print(f"Found current domain: {current_domain}, preparing to replace with: {new_domain}")
+        return current_domain, new_domain
+    else:
+        print("No valid domain pair found for replacement.")
+        return None, None
 
 # 替换JSON中的域名
-def replace_domain_in_json(json_data, new_domain):
+def replace_domain_in_json(json_data, old_domain, new_domain):
     keys_to_replace = [
         "首页推荐链接",
         "首页片单链接加前缀",
@@ -46,9 +66,10 @@ def replace_domain_in_json(json_data, new_domain):
         "直接播放直链视频请求头"
     ]
     
+    # 循环检查需要替换的键，并将指定的域名替换为新域名
     for key in keys_to_replace:
         if key in json_data:
-            json_data[key] = json_data[key].replace("7473ck.cc", new_domain)
+            json_data[key] = json_data[key].replace(old_domain, new_domain)
     
     return json_data
 
@@ -83,20 +104,20 @@ def push_to_github(updated_json):
 
 # 主程序
 def main():
-    # 获取当前有效域名
-    new_domain = find_valid_domain()
-    if new_domain:
-        # 获取现有JSON数据
-        json_data = fetch_json()
-        if json_data:
-            # 更新JSON中的域名
-            updated_json = replace_domain_in_json(json_data, new_domain)
+    # 先获取现有的 JSON 数据
+    json_data = fetch_json()
+    if json_data:
+        # 自动检测当前域名并选择替换
+        old_domain, new_domain = get_current_and_new_domain(json_data)
+        if old_domain and new_domain:
+            print(f"Replacing domain {old_domain} with {new_domain}.")
+            updated_json = replace_domain_in_json(json_data, old_domain, new_domain)
             # 推送更新后的文件到GitHub
             push_to_github(updated_json)
         else:
-            print("Error fetching JSON data.")
+            print("No valid domains to replace.")
     else:
-        print("No valid domain found.")
+        print("Error fetching JSON data.")
 
 if __name__ == "__main__":
     main()
