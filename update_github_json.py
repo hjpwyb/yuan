@@ -1,6 +1,7 @@
 import json
 import requests
 import os
+import base64  # 需要导入 base64 模块
 
 # 从环境变量获取 GitHub Token
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')
