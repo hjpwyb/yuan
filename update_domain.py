@@ -78,8 +78,11 @@ def push_to_github(updated_json):
     if response.status_code == 200:
         sha = response.json().get("sha")
         if sha:
+            # 将更新后的内容格式化为JSON并转换为字符串
+            json_content = json.dumps(updated_json, ensure_ascii=False, indent=4)
+            
             # Base64 编码更新后的内容
-            content = base64.b64encode(json.dumps(updated_json, ensure_ascii=False).encode("utf-8")).decode("utf-8")
+            content = base64.b64encode(json_content.encode("utf-8")).decode("utf-8")
             
             data = {
                 "message": "Updated domain in JSON file",
