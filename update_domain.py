@@ -22,7 +22,7 @@ for domain in ['7473', '7474', '7475', '7476']:
     json_data['首页推荐链接'] = f"http://{domain}ck.cc"
 
 # 保存更新后的 JSON 文件
-json_file_path = 'tv/XYQHiker/字幕库.json'  # 请确保路径正确
+json_file_path = 'tv/XYQHiker/字幕仓库.json'  # 请确保路径正确
 
 # 将更新后的 JSON 内容写入文件
 with open(json_file_path, 'w', encoding='utf-8') as f:
