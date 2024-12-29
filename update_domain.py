@@ -80,19 +80,20 @@ def push_to_github(updated_json):
     else:
         print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
 
-# 检查域名是否有效
+# 检查域名是否有效，支持重定向
 def is_valid_domain_with_path(url):
     try:
-        response = requests.get(url, timeout=5)
+        response = requests.get(url, timeout=5, allow_redirects=True)  # 允许重定向
+        final_url = response.url  # 获取最终跳转后的 URL
         if response.status_code == 200:
-            print(f"Valid domain found: {url}")
-            return True
+            print(f"Valid domain found: {final_url}")
+            return final_url  # 返回最终的有效域名
         else:
             print(f"Invalid domain: {url}")
-            return False
+            return None
     except requests.RequestException as e:
         print(f"Error accessing {url}: {e}")
-        return False
+        return None
 
 # 试错功能，测试一系列域名
 def test_domains(start_domain, path, num_tests=5):
@@ -100,8 +101,9 @@ def test_domains(start_domain, path, num_tests=5):
         domain = start_domain.replace("7465ck", f"{7465 + i}ck")
         full_url = f"http://{domain}{path}"
         print(f"Testing domain with path: {full_url}")
-        if is_valid_domain_with_path(full_url):
-            return domain  # 返回有效的域名
+        final_valid_domain = is_valid_domain_with_path(full_url)
+        if final_valid_domain:
+            return final_valid_domain  # 返回最终有效的域名
         time.sleep(2)  # 给服务器留出时间，避免过于频繁的请求
     return None  # 如果所有测试都失败，返回 None
 
