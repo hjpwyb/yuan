@@ -44,21 +44,16 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
     print("Current JSON data:")
     print(json.dumps(json_data, ensure_ascii=False, indent=2))
     
-    # 正则表达式匹配数字部分和固定域名 "ck.cc"
-    pattern = re.compile(r"\b(\d+)ck\.cc\b")
-    
     for key in keys_to_replace:
         if key in json_data:
             original_value = json_data[key]
-            matches = pattern.findall(original_value)
-            if matches:
-                for match in matches:
-                    # 创建新的有效域名
-                    new_value = original_value.replace(f"{match}ck.cc", f"{new_domain}")
-                    if original_value != new_value:
-                        print(f"Replacing domain in key '{key}': {original_value} -> {new_value}")
-                        json_data[key] = new_value
-                        changed = True
+            if old_domain in original_value:
+                # 替换域名
+                new_value = original_value.replace(old_domain, new_domain)
+                if original_value != new_value:
+                    print(f"Replacing domain in key '{key}': {original_value} -> {new_value}")
+                    json_data[key] = new_value
+                    changed = True
     
     return json_data, changed
 
@@ -113,8 +108,8 @@ def get_final_redirected_url(url):
 
 # 主程序
 def main():
-    old_domain_pattern = "ck.cc"  # 固定的域名部分
-    test_url = "http://7465ck.cc/vodtype/9-2.html"  # 测试网址
+    # 使用 kthsck.cc 来触发重定向
+    test_url = "http://kthsck.cc/vodtype/9.html"  # 需要触发重定向的 URL
     
     # 获取最终有效域名
     valid_domain = get_final_redirected_url(test_url)
@@ -123,7 +118,7 @@ def main():
         json_data = fetch_json()
         if json_data:
             # 替换域名
-            updated_json, changed = replace_domain_in_json(json_data, old_domain_pattern, valid_domain)
+            updated_json, changed = replace_domain_in_json(json_data, "ck.cc", valid_domain)
             
             # 如果有更改，则推送到 GitHub
             if changed:
