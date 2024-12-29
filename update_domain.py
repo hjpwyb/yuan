@@ -1,31 +1,28 @@
 import requests
 import json
-import re
 import base64
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # 你的 GitHub Token
+GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # 请在这里填写你的 GitHub Token
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
 }
 
-# 模拟浏览器请求并处理重定向
-def fetch_with_redirection(url):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-    }
-    
-    response = requests.get(url, headers=headers, allow_redirects=True)
-    
-    if response.history:
-        print("Redirect history:")
-        for resp in response.history:
-            print(f" - {resp.status_code} {resp.url}")
-    
-    print(f"Final URL after redirection: {response.url}")
-    return response.url
+# 尝试访问指定网址并返回有效性
+def check_url(url):
+    try:
+        response = requests.get(url, timeout=10)  # 设置超时为 10 秒
+        if response.status_code == 200:
+            print(f"Valid domain found: {url}")
+            return url
+        else:
+            print(f"Invalid domain: {url} (Status code: {response.status_code})")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to access {url}: {e}")
+        return None
 
 # 获取 JSON 文件并提取域名
 def fetch_json():
@@ -34,6 +31,7 @@ def fetch_json():
         return response.json()
     else:
         print(f"Failed to fetch JSON. Status code: {response.status_code}")
+        print(response.text)  # 打印详细错误信息
         return None
 
 # 替换 JSON 中的域名
@@ -75,29 +73,38 @@ def push_to_github(updated_json):
                 print("Successfully updated the file on GitHub.")
             else:
                 print(f"Failed to push changes to GitHub. Status code: {response.status_code}")
+                print(response.text)  # 输出详细错误信息
         else:
             print("Failed to get SHA from the response.")
     else:
         print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
+        print(response.text)  # 输出详细错误信息
 
 # 主程序
 def main():
-    test_url = "http://7465ck.cc/vodtype/9-2.html"  # 需要重定向的 URL
-    
-    # 获取重定向后的最终有效 URL
-    valid_url = fetch_with_redirection(test_url)
-    
-    # 获取现有的 JSON 文件
-    json_data = fetch_json()
-    if json_data:
-        # 替换 JSON 中的域名
-        old_domain = "7465ck.cc"  # 假设我们要替换的是这个旧域名
-        updated_json = replace_domain_in_json(json_data, old_domain, valid_url)
+    # 假设我们要从7465ck.cc开始试错
+    base_url = "http://7465ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
+    test_url = base_url
+
+    # 进行试错，依次更换URL中的数字部分
+    for i in range(7465, 7480):  # 假设你想测试7465ck.cc到7470ck.cc这几个域名
+        url_to_test = test_url.replace("7465ck.cc", f"{i}ck.cc")
         
-        # 推送更新到 GitHub
-        push_to_github(updated_json)
+        # 检查URL有效性
+        valid_url = check_url(url_to_test)
+        if valid_url:
+            # 获取现有的 JSON 文件
+            json_data = fetch_json()
+            if json_data:
+                # 替换 JSON 中的域名
+                old_domain = "7465ck.cc"  # 假设我们要替换的是这个旧域名
+                updated_json = replace_domain_in_json(json_data, old_domain, valid_url)
+                
+                # 推送更新到 GitHub
+                push_to_github(updated_json)
+            break
     else:
-        print("Failed to fetch JSON data.")
+        print("No valid domain found after trying all the URLs.")
 
 if __name__ == "__main__":
     main()
