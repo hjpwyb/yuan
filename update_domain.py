@@ -80,7 +80,7 @@ def main():
     valid_links = []  # 存储有效链接
 
     # 进行试错，依次更换URL中的数字部分
-    for i in range(7465, 7500):  # 假设你想测试7465ck.cc到7999ck.cc这几个域名
+    for i in range(7465, 7500):  # 假设你想测试7465ck.cc到7474ck.cc这几个域名
         url_to_test = base_url.replace("7465ck.cc", f"{i}ck.cc")
         
         # 检查URL有效性并匹配内容
@@ -94,8 +94,19 @@ def main():
         # 获取现有文件的 SHA 值
         sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
 
+        # 获取现有的有效链接（从 GitHub 上下载当前 valid_links.txt）
+        current_links = []
+        if sha:
+            url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}"
+            response = requests.get(url)
+            if response.status_code == 200:
+                current_links = response.text.splitlines()
+
+        # 更新链接：首先删除掉失效的旧网址
+        updated_links = list(set(valid_links + current_links))  # 合并新旧链接，去重
+
         # 更新 GitHub 上的文件
-        update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, valid_links, sha, BRANCH_NAME, COMMIT_MESSAGE)
+        update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, updated_links, sha, BRANCH_NAME, COMMIT_MESSAGE)
     else:
         print("没有找到有效的链接。")
 
