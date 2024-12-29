@@ -26,5 +26,5 @@ jobs:
 
     - name: Run update_domain.py script
       env:
-        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub Secrets 中的 Token
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用 Secrets 中的 Token
       run: python3 update_domain.py
