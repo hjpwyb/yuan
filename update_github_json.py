@@ -1,7 +1,7 @@
 import json
 import requests
 import os
-import base64  # 需要导入 base64 模块
+import base64
 
 # 从环境变量获取 GitHub Token
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')
@@ -10,7 +10,7 @@ REPO_NAME = 'yuan'  # 仓库名称
 FILE_PATH = 'tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json'  # 文件路径
 BRANCH_NAME = 'main'  # 分支名称
 COMMIT_MESSAGE = '更新链接替换'  # 提交信息
-VALID_LINKS_FILE_PATH = 'valid_links.txt'  # 新链接文件路径
+VALID_LINKS_FILE_PATH = 'valid_links.txt'  # valid_links.txt 文件路径
 
 # 下载 GitHub 上的原始文件内容
 def download_json_file(url):
@@ -22,13 +22,13 @@ def download_json_file(url):
         print(f"下载文件时发生错误: {e}")
         return None
 
-# 下载并解析 valid_links.txt 文件中的链接
+# 下载 valid_links.txt 中的所有新链接
 def download_valid_links():
     url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{VALID_LINKS_FILE_PATH}'
     try:
         response = requests.get(url)
-        response.raise_for_status()  # 确保请求成功
-        return response.text.splitlines()  # 按行分割，返回链接列表
+        response.raise_for_status()
+        return response.text.splitlines()  # 按行分割并返回链接列表
     except requests.exceptions.RequestException as e:
         print(f"下载 valid_links.txt 时发生错误: {e}")
         return []
@@ -39,11 +39,8 @@ def replace_links_in_json(data, old_link, new_links):
         for key, value in d.items():
             if isinstance(value, str):  # 如果值是字符串
                 if old_link in value:
-                    # 这里替换为新链接列表中的一个链接
                     for new_link in new_links:
-                        if old_link in value:
-                            value = value.replace(old_link, new_link)
-                            break  # 替换完就退出循环
+                        value = value.replace(old_link, new_link)
                     d[key] = value
             elif isinstance(value, dict):  # 如果值是字典，递归替换
                 replace_in_dict(value)
@@ -53,10 +50,7 @@ def replace_links_in_json(data, old_link, new_links):
                         replace_in_dict(item)
                     elif isinstance(item, str):
                         if old_link in item:
-                            for new_link in new_links:
-                                if old_link in item:
-                                    item = item.replace(old_link, new_link)
-                                    break  # 替换完就退出循环
+                            item = item.replace(old_link, new_link)
 
     # 开始替换
     replace_in_dict(data)
@@ -109,6 +103,7 @@ def main():
     # 下载 valid_links.txt 中的所有新链接
     new_links = download_valid_links()
     if not new_links:
+        print("没有有效链接可用.")
         return
 
     # 下载 JSON 文件
@@ -124,8 +119,18 @@ def main():
     if sha is None:
         return
 
-    # 更新文件
+    # 更新 JSON 文件
     update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, updated_data, sha, BRANCH_NAME, COMMIT_MESSAGE)
+
+    # 更新 valid_links.txt 文件，只保留有效的链接
+    valid_links_to_save = [link for link in new_links if old_link in link]  # 仅保留包含旧链接的有效链接
+    if valid_links_to_save:
+        # 将有效链接保存到 valid_links.txt
+        sha_valid_links = get_file_sha(REPO_OWNER, REPO_NAME, VALID_LINKS_FILE_PATH, BRANCH_NAME)
+        if sha_valid_links is None:
+            print("无法获取 valid_links.txt 的 SHA 值.")
+            return
+        update_github_file(REPO_OWNER, REPO_NAME, VALID_LINKS_FILE_PATH, valid_links_to_save, sha_valid_links, BRANCH_NAME, '更新有效链接')
 
 # 运行主程序
 if __name__ == "__main__":
