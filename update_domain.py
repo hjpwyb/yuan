@@ -1,29 +1,50 @@
-import requests
 import json
-import os
+import requests
 
-# GitHub 仓库文件 URL
-repo_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json"  # 确保路径正确
-print(f"Trying to fetch JSON from: {repo_url}")
+# 配置您的 GitHub 仓库和文件路径
+github_raw_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json"
+github_api_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/字幕仓库.json"
+github_token = "your_github_token"  # 替换为您的 GitHub Token
 
-# 获取文件内容
-response = requests.get(repo_url)
-
+# 获取 JSON 文件
+response = requests.get(github_raw_url)
 if response.status_code == 200:
     json_data = response.json()
     print("Successfully fetched JSON.")
+
+    # 在这里修改域名数组
+    # 例如，可以将域名中的 "7473" 替换为 "example.com"
+    updated_domains = ["example.com" for domain in json_data["域名"]]
+
+    # 更新 JSON 数据中的域名部分
+    json_data["域名"] = updated_domains
+
+    # 提交到 GitHub
+    headers = {
+        "Authorization": f"token {github_token}",
+        "Content-Type": "application/json",
+    }
+
+    # 获取文件的 SHA
+    sha = requests.get(github_api_url, headers=headers).json()["sha"]
+
+    # 通过 GitHub API 提交修改
+    update_data = {
+        "message": "Update domain names in JSON",
+        "committer": {
+            "name": "GitHub Actions",
+            "email": "actions@github.com",
+        },
+        "sha": sha,
+        "content": json.dumps(json_data, ensure_ascii=False),
+    }
+
+    update_url = f"{github_api_url}?ref=main"
+    update_response = requests.put(update_url, json=update_data, headers=headers)
+
+    if update_response.status_code == 200:
+        print("Domain updated successfully!")
+    else:
+        print(f"Failed to update domain: {update_response.status_code}")
 else:
-    print(f"Failed to fetch JSON. HTTP Status Code: {response.status_code}")
-    print("Response text:", response.text)  # 输出响应的详细信息，帮助调试
-
-# 更新 JSON 数据（示例：更改域名部分）
-for domain in ['7473', '7474', '7475', '7476']:
-    json_data['首页推荐链接'] = f"http://{domain}ck.cc"
-
-# 保存更新后的 JSON 文件
-json_file_path = 'tv/XYQHiker/字幕仓库.json'
-
-with open(json_file_path, 'w', encoding='utf-8') as f:
-    json.dump(json_data, f, ensure_ascii=False, indent=4)
-
-print("Domain updated successfully!")
+    print(f"Failed to fetch JSON from GitHub: {response.status_code}")
