@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -5,7 +6,10 @@ import re
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_TOKEN = "MY_GITHUB_TOKEN"  # 填入你的 GitHub Token
+GITHUB_TOKEN = os.getenv("GH_TOKEN")  # 从环境变量中读取 GitHub Token
+if not GITHUB_TOKEN:
+    print("GitHub Token (GH_TOKEN) is not set.")
+    exit(1)  # 如果 Token 没有设置，直接退出
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
