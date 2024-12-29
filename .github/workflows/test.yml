@@ -1,29 +1,29 @@
-name: Run Python Script and Update GitHub File
+name: Auto Update GitHub File
 
 on:
+  workflow_dispatch:  # 允许手动触发
   schedule:
-    - cron: '0 * * * *'  # 每小时执行一次
-  workflow_dispatch:  # 手动触发工作流
+    - cron: '0 * * * *'  # 每小时触发一次
 
 jobs:
-  run-python-script:
+  update-file:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3  # 检出代码库
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'  # 选择 Python 版本
+          python-version: '3.8'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests  # 安装 requests 库
+          pip install requests
 
-      - name: Run test.py
+      - name: Run update script
         env:
-          GITHUB_TOKEN: ${{ secrets.YOU_TOKEN }}  # 使用 GitHub Secrets 中的 token, 名字是 YOU_TOKEN
-        run: python test.py  # 运行 test.py 脚本
+          YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 从 GitHub Secrets 获取 Token
+        run: python update_github_json.py
