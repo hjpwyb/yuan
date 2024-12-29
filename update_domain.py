@@ -42,23 +42,20 @@ def fetch_json():
         print(response.text)  # 打印详细错误信息
         return None
 
-# 替换 JSON 中的域名
+# 替换 JSON 中所有含有 ck.cc 的域名
 def replace_domain_in_json(json_data, old_domain, new_domain):
-    keys_to_replace = [
-        "首页推荐链接",
-        "首页片单链接加前缀",
-        "分类链接",
-        "分类片单链接加前缀",
-        "搜索链接",
-        "搜索片单链接加前缀",
-        "直接播放直链视频请求头"
-    ]
+    # 递归遍历 JSON 中的所有字段，并替换含有 old_domain 的域名
+    if isinstance(json_data, dict):  # 如果是字典，递归处理
+        for key, value in json_data.items():
+            json_data[key] = replace_domain_in_json(value, old_domain, new_domain)
+    elif isinstance(json_data, list):  # 如果是列表，遍历每个元素
+        for i in range(len(json_data)):
+            json_data[i] = replace_domain_in_json(json_data[i], old_domain, new_domain)
+    elif isinstance(json_data, str):  # 如果是字符串，检查是否包含 old_domain
+        if old_domain in json_data:
+            json_data = json_data.replace(old_domain, new_domain)  # 替换域名
+            print(f"Replaced domain in string: {json_data}")
     
-    for key in keys_to_replace:
-        if key in json_data:
-            json_data[key] = json_data[key].replace(old_domain, new_domain)
-            print(f"Replaced domain in key '{key}'")
-
     return json_data
 
 # 将更新后的 JSON 推送到 GitHub
