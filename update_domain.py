@@ -81,40 +81,27 @@ def push_to_github(updated_json):
         print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
 
 # 检查域名是否有效，支持重定向
-def is_valid_domain_with_path(url):
+def get_final_redirected_url(url):
     try:
         response = requests.get(url, timeout=5, allow_redirects=True)  # 允许重定向
         final_url = response.url  # 获取最终跳转后的 URL
         if response.status_code == 200:
-            print(f"Valid domain found: {final_url}")
+            print(f"Valid domain found after redirection: {final_url}")
             return final_url  # 返回最终的有效域名
         else:
-            print(f"Invalid domain: {url}")
+            print(f"Invalid domain after redirection: {url}")
             return None
     except requests.RequestException as e:
         print(f"Error accessing {url}: {e}")
         return None
 
-# 试错功能，测试一系列域名
-def test_domains(start_domain, path, num_tests=5):
-    for i in range(num_tests):
-        domain = start_domain.replace("7465ck", f"{7465 + i}ck")
-        full_url = f"http://{domain}{path}"
-        print(f"Testing domain with path: {full_url}")
-        final_valid_domain = is_valid_domain_with_path(full_url)
-        if final_valid_domain:
-            return final_valid_domain  # 返回最终有效的域名
-        time.sleep(2)  # 给服务器留出时间，避免过于频繁的请求
-    return None  # 如果所有测试都失败，返回 None
-
 # 主程序
 def main():
-    old_domain = "7465ck.cc"  # 假设要替换的旧域名
-    start_domain = "7465ck.cc"  # 开始测试的域名
-    path = "/vodtype/9-2.html"  # 假设这是路径部分
+    old_domain = "kthsck.cc"  # 旧域名，假设需要替换的域名
+    test_url = "http://kthsck.cc/vodtype/9.html"  # 触发重定向的网址
 
-    # 试错获取有效域名
-    valid_domain = test_domains(start_domain, path)
+    # 获取最终有效域名
+    valid_domain = get_final_redirected_url(test_url)
     if valid_domain:
         # 获取 JSON 数据
         json_data = fetch_json()
@@ -130,7 +117,7 @@ def main():
         else:
             print("Failed to fetch JSON data.")
     else:
-        print("No valid domain found during the test.")
+        print("No valid domain found after redirection.")
 
 if __name__ == "__main__":
     main()
