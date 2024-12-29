@@ -1,18 +1,18 @@
 {
     "name": "字幕仓库.json",
     "path": "tv/XYQHiker/字幕仓库.json",
-    "sha": "af86a7816cd08b92f73ddfde1d266217a0a800dc",
-    "size": 1226467,
+    "sha": "ecc4564fd1044e060b79493f657b6fd54d87e376",
+    "size": 1052,
     "url": "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json?ref=main",
     "html_url": "https://github.com/hjpwyb/yuan/blob/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json",
-    "git_url": "https://api.github.com/repos/hjpwyb/yuan/git/blobs/af86a7816cd08b92f73ddfde1d266217a0a800dc",
+    "git_url": "https://api.github.com/repos/hjpwyb/yuan/git/blobs/ecc4564fd1044e060b79493f657b6fd54d87e376",
     "download_url": "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json",
     "type": "file",
-    "content": "",
-    "encoding": "none",
+    "content": "ewogICAgIm5hbWUiOiAi5a2X5bmV5LuT5bqTLmpzb24iLAogICAgInBhdGgi\nOiAidHYvWFlRSGlrZXIv5a2X5bmV5LuT5bqTLmpzb24iLAogICAgInNoYSI6\nICJhZjg2YTc4MTZjZDA4YjkyZjczZGRmZGUxZDI2NjIxN2EwYTgwMGRjIiwK\nICAgICJzaXplIjogMTIyNjQ2NywKICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGku\nZ2l0aHViLmNvbS9yZXBvcy9oanB3eWIveXVhbi9jb250ZW50cy90di9YWVFI\naWtlci8lRTUlQUQlOTclRTUlQjklOTUlRTQlQkIlOTMlRTUlQkElOTMuanNv\nbj9yZWY9bWFpbiIsCiAgICAiaHRtbF91cmwiOiAiaHR0cHM6Ly9naXRodWIu\nY29tL2hqcHd5Yi95dWFuL2Jsb2IvbWFpbi90di9YWVFIaWtlci8lRTUlQUQl\nOTclRTUlQjklOTUlRTQlQkIlOTMlRTUlQkElOTMuanNvbiIsCiAgICAiZ2l0\nX3VybCI6ICJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL2hqcHd5Yi95\ndWFuL2dpdC9ibG9icy9hZjg2YTc4MTZjZDA4YjkyZjczZGRmZGUxZDI2NjIx\nN2EwYTgwMGRjIiwKICAgICJkb3dubG9hZF91cmwiOiAiaHR0cHM6Ly9yYXcu\nZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hqcHd5Yi95dWFuL21haW4vdHYvWFlR\nSGlrZXIv5a2X5bmV5LuT5bqTLmpzb24iLAogICAgInR5cGUiOiAiZmlsZSIs\nCiAgICAiY29udGVudCI6ICIiLAogICAgImVuY29kaW5nIjogIm5vbmUiLAog\nICAgIl9saW5rcyI6IHsKICAgICAgICAic2VsZiI6ICJodHRwczovL2FwaS5n\naXRodWIuY29tL3JlcG9zL2hqcHd5Yi95dWFuL2NvbnRlbnRzL3R2L1hZUUhp\na2VyLyVFNSVBRCU5NyVFNSVCOSU5NSVFNCVCQiU5MyVFNSVCQSU5My5qc29u\nP3JlZj1tYWluIiwKICAgICAgICAiZ2l0IjogImh0dHBzOi8vYXBpLmdpdGh1\nYi5jb20vcmVwb3MvaGpwd3liL3l1YW4vZ2l0L2Jsb2JzL2FmODZhNzgxNmNk\nMDhiOTJmNzNkZGZkZTFkMjY2MjE3YTBhODAwZGMiLAogICAgICAgICJodG1s\nIjogImh0dHBzOi8vZ2l0aHViLmNvbS9oanB3eWIveXVhbi9ibG9iL21haW4v\ndHYvWFlRSGlrZXIvJUU1JUFEJTk3JUU1JUI5JTk1JUU0JUJCJTkzJUU1JUJB\nJTkzLmpzb24iCiAgICB9Cn0=\n",
+    "encoding": "base64",
     "_links": {
         "self": "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json?ref=main",
-        "git": "https://api.github.com/repos/hjpwyb/yuan/git/blobs/af86a7816cd08b92f73ddfde1d266217a0a800dc",
+        "git": "https://api.github.com/repos/hjpwyb/yuan/git/blobs/ecc4564fd1044e060b79493f657b6fd54d87e376",
         "html": "https://github.com/hjpwyb/yuan/blob/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
     }
 }
