@@ -3,7 +3,7 @@ name: Update Domain
 on:
   push:
     branches:
-      - main
+      - main  # 当主分支有推送时触发该工作流
 
 jobs:
   update-domain:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # 选择你需要的 Python 版本
     
     - name: Install dependencies
       run: |
@@ -26,5 +26,5 @@ jobs:
     
     - name: Run update_domain.py script
       env:
-        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 从 Secrets 中读取 Token
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 从 GitHub Secrets 中读取 GitHub Token
       run: python3 update_domain.py
