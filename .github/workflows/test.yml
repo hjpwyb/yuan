@@ -1,4 +1,4 @@
-name: Run Python Script
+name: Run Python Script and Update GitHub File
 
 on:
   push:
@@ -25,10 +25,6 @@ jobs:
           pip install requests  # 安装 requests 库
 
       - name: Run test.py
+        env:
+          YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 使用 GitHub Secrets 中的 YOU_TOKEN
         run: python test.py  # 运行 test.py 脚本
-
-      - name: Upload the modified file
-        uses: actions/upload-artifact@v3
-        with:
-          name: modified-json
-          path: updated_file.json  # 上传修改后的文件
