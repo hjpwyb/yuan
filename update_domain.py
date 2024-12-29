@@ -1,4 +1,15 @@
 import requests
+import os
+import base64
+import json
+
+# GitHub 配置
+GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量中获取 GitHub Token
+REPO_OWNER = 'hjpwyb'  # 仓库拥有者
+REPO_NAME = 'yuan'  # 仓库名称
+BRANCH_NAME = 'main'  # 分支名称
+FILE_PATH = 'valid_links.txt'  # 要上传的文件路径
+COMMIT_MESSAGE = '更新有效链接'  # 提交信息
 
 # 尝试访问指定网址并返回有效性
 def check_url(url):
@@ -19,16 +30,70 @@ def check_url(url):
         print(f"Failed to access {url}: {e}")
         return None
 
+# 获取文件的 SHA 值
+def get_file_sha(repo_owner, repo_name, file_path, branch):
+    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}?ref={branch}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        file_info = response.json()
+        return file_info['sha']
+    else:
+        print(f"无法获取文件 SHA 值: {response.status_code}")
+        return None
+
+# 更新 GitHub 上的文件内容
+def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, commit_message):
+    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    
+    # 重新格式化文件内容
+    formatted_content = "\n".join(new_data)
+
+    # 将内容编码为 base64
+    encoded_content = base64.b64encode(formatted_content.encode('utf-8')).decode('utf-8')
+    
+    # 构建请求体
+    data = {
+        "message": commit_message,
+        "content": encoded_content,
+        "sha": sha,  # 文件的 SHA 值
+        "branch": branch
+    }
+    
+    # 发送 PUT 请求更新文件
+    response = requests.put(url, headers=headers, json=data)
+    if response.status_code == 200:
+        print(f"文件已成功更新！")
+    else:
+        print(f"更新文件时发生错误: {response.status_code} - {response.text}")
+
 # 主程序
 def main():
     base_url = "http://7465ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
+    valid_links = []  # 存储有效链接
 
     # 进行试错，依次更换URL中的数字部分
     for i in range(7465, 7475):  # 假设你想测试7465ck.cc到7474ck.cc这几个域名
         url_to_test = base_url.replace("7465ck.cc", f"{i}ck.cc")
         
         # 检查URL有效性并匹配内容
-        check_url(url_to_test)
+        valid_url = check_url(url_to_test)
+        if valid_url:
+            valid_links.append(valid_url)  # 如果链接有效，添加到有效链接列表
 
+    if valid_links:
+        # 获取现有文件的 SHA 值
+        sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
+        if sha is None:
+            # 如果文件不存在，则创建一个新文件
+            sha = ''
+
+        # 更新 GitHub 上的文件
+        update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, valid_links, sha, BRANCH_NAME, COMMIT_MESSAGE)
+    else:
+        print("没有找到有效的链接。")
+
+# 运行主程序
 if __name__ == "__main__":
     main()
