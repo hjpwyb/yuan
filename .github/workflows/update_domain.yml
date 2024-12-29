@@ -1,53 +1,29 @@
-name: Update Domain in JSON
+name: Update Domain
 
 on:
   push:
     branches:
-      - main  # 触发工作流的分支，根据需要修改为其他分支
+      - main
 
 jobs:
-  update_json:
-    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版本的虚拟机运行脚本
-
+  update-domain:
+    runs-on: ubuntu-latest
+    
     steps:
-    # Step 1: 检出仓库代码
     - name: Checkout repository
-      uses: actions/checkout@v3
-
-    # Step 2: 设置 Python 环境
-    - name: Set up Python 3.x
-      uses: actions/setup-python@v4
+      uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
         python-version: '3.x'
 
-    # Step 3: 安装所需依赖
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests  # 确保安装了 requests 库
+        pip install requests
 
-    # Step 4: 运行 update_domain.py 脚本
-    - name: Run update_domain.py
-      run: |
-        python3 update_domain.py
+    - name: Run update_domain.py script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 进行身份验证
-
-    # Step 5: 提交更新后的 JSON 文件并推送回仓库
-    - name: Commit updated JSON
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add tv/XYQHiker/字幕仓库.json  # 请根据实际路径调整文件
-        git commit -m "Update domain in JSON"
-        git push origin main  # 推送到 main 分支，根据需要修改为其他分支
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 自动使用 GitHub 提供的 token
-
-    # 可选：调试步骤，显示当前工作目录和文件
-    - name: Debug information
-      run: |
-        echo "Current directory:"
-        pwd
-        echo "Files in current directory:"
-        ls -la
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub Secrets 中的 Token
+      run: python3 update_domain.py
