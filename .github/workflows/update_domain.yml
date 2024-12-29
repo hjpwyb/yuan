@@ -1,40 +1,32 @@
 name: Update Domain
 
 on:
-  # 手动触发工作流
-  workflow_dispatch: 
-    inputs:
-      action:
-        description: 'Choose to manually trigger the workflow'
-        required: true
-        default: 'Run Now'
-        
-  # 定时触发工作流
+  workflow_dispatch:  # 手动触发工作流
   schedule:
     - cron: '0 * * * *'  # 每小时的第一分钟执行一次
 
 jobs:
   update-domain:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'  # 选择你需要的 Python 版本
-    
+        python-version: '3.x'
+
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install requests
-        pip install beautifulsoup4  # 安装 BeautifulSoup4
-    
+        pip install beautifulsoup4
+
     - name: Run update_domain.py script
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 从 GitHub Secrets 中读取 GitHub Token
       run: python3 update_domain.py  # 执行更新域名脚本
 
     - name: Commit and push changes (if any)
@@ -42,7 +34,9 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         
-        # 检查文件是否有变动
+        git status  # 查看当前文件状态，确认是否有变动
+        
+        # 如果文件发生变化，则提交并推送
         git diff --exit-code || (
           git add .
           git commit -m "Update domain in JSON"
