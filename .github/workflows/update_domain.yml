@@ -1,6 +1,15 @@
 name: Update Domain
 
 on:
+  # 手动触发工作流
+  workflow_dispatch: 
+    inputs:
+      action:
+        description: 'Choose to manually trigger the workflow'
+        required: true
+        default: 'Run Now'
+        
+  # 定时触发工作流
   schedule:
     - cron: '0 * * * *'  # 每小时的第一分钟执行一次
 
