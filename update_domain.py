@@ -5,8 +5,8 @@ def check_url(url):
     try:
         response = requests.get(url, timeout=10)  # 设置超时为 10 秒
         if response.status_code == 200:
-            print(f"Valid domain found: {url}")
-            return url  # 返回有效的 URL
+            print(f"Valid domain found: {url}")         你看看简化版只找正确位置的脚本内容 
+            return url
         else:
             print(f"Invalid domain: {url} (Status code: {response.status_code})")
             return None
@@ -23,13 +23,7 @@ def main():
         url_to_test = base_url.replace("7465ck.cc", f"{i}ck.cc")
         
         # 检查URL有效性
-        valid_url = check_url(url_to_test)
-        if valid_url:
-            # 找到有效域名后，打印结果
-            print(f"Found valid URL: {valid_url}")
-            # 这里可以添加后续操作，比如获取 JSON 文件并推送更新等
-            # 如果你需要后续处理，可以调用其他函数来执行
-            break  # 找到有效的 URL 后停止进一步试错
+        check_url(url_to_test)
 
 if __name__ == "__main__":
-    main()
+    main()  
