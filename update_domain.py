@@ -13,7 +13,6 @@ if response.status_code == 200:
     print("Successfully fetched JSON.")
 
     # 在这里修改域名数组
-    # 例如，可以将域名中的 "7473" 替换为 "example.com"
     updated_domains = ["example.com" for domain in json_data["域名"]]
 
     # 更新 JSON 数据中的域名部分
@@ -26,7 +25,15 @@ if response.status_code == 200:
     }
 
     # 获取文件的 SHA
-    sha = requests.get(github_api_url, headers=headers).json()["sha"]
+    api_response = requests.get(github_api_url, headers=headers)
+    print("API response:", api_response.json())  # 打印响应内容查看返回的数据结构
+
+    try:
+        sha = api_response.json()["sha"]
+    except KeyError:
+        print("Failed to get SHA from response.")
+        print("Response:", api_response.json())
+        exit(1)
 
     # 通过 GitHub API 提交修改
     update_data = {
