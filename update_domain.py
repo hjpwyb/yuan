@@ -2,6 +2,7 @@ import requests
 import os
 import base64
 import json
+from urllib.parse import urlparse
 
 # GitHub 配置
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量中获取 GitHub Token
@@ -38,6 +39,9 @@ def get_file_sha(repo_owner, repo_name, file_path, branch):
     if response.status_code == 200:
         file_info = response.json()
         return file_info['sha']
+    elif response.status_code == 404:
+        print(f"文件 {file_path} 不存在，准备创建新文件。")
+        return None
     else:
         print(f"无法获取文件 SHA 值: {response.status_code}")
         return None
@@ -57,13 +61,15 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
     data = {
         "message": commit_message,
         "content": encoded_content,
-        "sha": sha,  # 文件的 SHA 值
         "branch": branch
     }
+
+    if sha:  # 如果文件存在，则需要提供 sha 来更新
+        data["sha"] = sha
     
     # 发送 PUT 请求更新文件
     response = requests.put(url, headers=headers, json=data)
-    if response.status_code == 200:
+    if response.status_code == 201:
         print(f"文件已成功更新！")
     else:
         print(f"更新文件时发生错误: {response.status_code} - {response.text}")
@@ -80,14 +86,13 @@ def main():
         # 检查URL有效性并匹配内容
         valid_url = check_url(url_to_test)
         if valid_url:
-            valid_links.append(valid_url)  # 如果链接有效，添加到有效链接列表
+            # 只提取域名部分，不包括路径
+            domain = urlparse(valid_url).scheme + "://" + urlparse(valid_url).hostname
+            valid_links.append(domain)  # 如果链接有效，添加到有效链接列表
 
     if valid_links:
         # 获取现有文件的 SHA 值
         sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
-        if sha is None:
-            # 如果文件不存在，则创建一个新文件
-            sha = ''
 
         # 更新 GitHub 上的文件
         update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, valid_links, sha, BRANCH_NAME, COMMIT_MESSAGE)
