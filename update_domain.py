@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import base64
+import time
 
 # GitHub URL（直接访问 raw 内容）
 GITHUB_URL = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
@@ -37,11 +38,17 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
         "直接播放直链视频请求头"
     ]
     
+    changed = False  # 标记是否发生了变化
+    
     for key in keys_to_replace:
         if key in json_data:
-            json_data[key] = json_data[key].replace(old_domain, new_domain)
-            print(f"Replaced domain in key '{key}'")
-    return json_data
+            new_value = json_data[key].replace(old_domain, new_domain)
+            if new_value != json_data[key]:
+                changed = True
+                json_data[key] = new_value
+                print(f"Replaced domain in key '{key}'")
+    
+    return json_data, changed
 
 # 更新文件到 GitHub
 def push_to_github(updated_json):
@@ -68,24 +75,53 @@ def push_to_github(updated_json):
     else:
         print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
 
+# 检查域名是否有效
+def is_valid_domain(url):
+    try:
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            print(f"Valid domain found: {url}")
+            return True
+        else:
+            print(f"Invalid domain: {url}")
+            return False
+    except requests.RequestException as e:
+        print(f"Error accessing {url}: {e}")
+        return False
+
+# 试错功能，测试一系列域名
+def test_domains(start_domain, num_tests=5):
+    for i in range(num_tests):
+        domain = start_domain.replace("7463ck", f"{7463 + i}ck")
+        print(f"Testing domain: {domain}")
+        if is_valid_domain(f"http://{domain}"):
+            return domain  # 返回有效的域名
+        time.sleep(2)  # 给服务器留出时间，避免过于频繁的请求
+    return None  # 如果所有测试都失败，返回 None
+
 # 主程序
 def main():
-    old_domain = "7465ck.cc"  # 假设要替换的旧域名
-    new_domain = "1234ab.cc"  # 这是你希望替换的新域名
+    old_domain = "7463ck.cc"  # 假设要替换的旧域名
+    start_domain = "7463ck.cc"  # 开始测试的域名
 
-    # 获取 JSON 数据
-    json_data = fetch_json()
-    if json_data:
-        # 替换域名
-        updated_json = replace_domain_in_json(json_data, old_domain, new_domain)
-        
-        # 如果有更改，则推送到 GitHub
-        if updated_json != json_data:
-            push_to_github(updated_json)
+    # 试错获取有效域名
+    valid_domain = test_domains(start_domain)
+    if valid_domain:
+        # 获取 JSON 数据
+        json_data = fetch_json()
+        if json_data:
+            # 替换域名
+            updated_json, changed = replace_domain_in_json(json_data, old_domain, valid_domain)
+            
+            # 如果有更改，则推送到 GitHub
+            if changed:
+                push_to_github(updated_json)
+            else:
+                print("No changes were made to the JSON file.")
         else:
-            print("No changes were made to the JSON file.")
+            print("Failed to fetch JSON data.")
     else:
-        print("Failed to fetch JSON data.")
+        print("No valid domain found during the test.")
 
 if __name__ == "__main__":
     main()
