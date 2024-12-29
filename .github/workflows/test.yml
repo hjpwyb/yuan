@@ -2,7 +2,7 @@ name: Run Python Script and Update GitHub File
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 每小时执行一次，使用 cron 表达式
+    - cron: '0 * * * *'  # 每小时执行一次
   workflow_dispatch:  # 手动触发工作流
 
 jobs:
@@ -23,11 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests  # 安装 requests 库
 
-      - name: Check token
-        run: |
-          echo "GitHub Token is: ${{ secrets.YOU_TOKEN }}"  # 打印 GitHub Token 以确认是否正确
-          
       - name: Run test.py
         env:
-          GITHUB_TOKEN: ${{ secrets.YOU_TOKEN }}  # 使用 GitHub Secrets 中的 Token
+          GITHUB_TOKEN: ${{ secrets.YOU_TOKEN }}  # 使用 GitHub Secrets 中的 token, 名字是 YOU_TOKEN
         run: python test.py  # 运行 test.py 脚本
