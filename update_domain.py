@@ -1,29 +1,31 @@
-import json
-import requests
-import base64
 import os
+import requests
+import json
+import base64
 
-# GitHub API 配置
-GITHUB_URL = "https://api.github.com/repos/yourusername/yourrepo/contents/yourjsonfile.json"
+# GitHub URL（直接访问 raw 内容）
+GITHUB_URL = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+GITHUB_API_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
 GITHUB_TOKEN = os.getenv("GH_TOKEN")  # 从环境变量中读取 GitHub Token
 if not GITHUB_TOKEN:
     print("GitHub Token (GH_TOKEN) is not set.")
     exit(1)  # 如果 Token 没有设置，直接退出
+
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
 }
 
-# 通过 API 获取 JSON 文件
+# 读取文件内容
 def fetch_json():
-    response = requests.get(GITHUB_URL, headers=HEADERS)
+    response = requests.get(GITHUB_URL)
     if response.status_code == 200:
         return response.json()
     else:
         print(f"Failed to fetch JSON. Status code: {response.status_code}")
         return None
 
-# 替换 JSON 中的域名（只替换包含数字部分的域名）
+# 替换 JSON 中指定的域名
 def replace_domain_in_json(json_data, old_domain, new_domain):
     keys_to_replace = [
         "首页推荐链接",
@@ -35,21 +37,16 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
         "直接播放直链视频请求头"
     ]
     
-    updated = False  # 标记是否有更新
-
     for key in keys_to_replace:
         if key in json_data:
-            if old_domain in json_data[key]:  # 检查是否包含旧域名
-                json_data[key] = json_data[key].replace(old_domain, new_domain)
-                updated = True  # 标记为更新
-                print(f"Replaced domain in key '{key}'")
+            json_data[key] = json_data[key].replace(old_domain, new_domain)
+            print(f"Replaced domain in key '{key}'")
+    return json_data
 
-    return json_data, updated
-
-# 将更新后的 JSON 文件推送到 GitHub
+# 更新文件到 GitHub
 def push_to_github(updated_json):
     # 获取文件当前内容的 SHA
-    response = requests.get(GITHUB_URL, headers=HEADERS)
+    response = requests.get(GITHUB_API_URL, headers=HEADERS)
     if response.status_code == 200:
         sha = response.json().get("sha")
         if sha:
@@ -57,11 +54,11 @@ def push_to_github(updated_json):
             content = base64.b64encode(json.dumps(updated_json, ensure_ascii=False).encode("utf-8")).decode("utf-8")
             
             data = {
-                "message": "Update domain in JSON",
+                "message": "Updated domain in JSON file",
                 "sha": sha,
                 "content": content
             }
-            response = requests.put(GITHUB_URL, headers=HEADERS, json=data)
+            response = requests.put(GITHUB_API_URL, headers=HEADERS, json=data)
             if response.status_code == 200:
                 print("Successfully updated the file on GitHub.")
             else:
@@ -73,18 +70,18 @@ def push_to_github(updated_json):
 
 # 主程序
 def main():
-    old_domain = "7465ck.cc"  # 要替换的旧域名
-    new_domain = "1234ab.cc"  # 新域名
-    
-    # 获取现有的 JSON 文件
+    old_domain = "7465ck.cc"  # 假设要替换的旧域名
+    new_domain = "1234ab.cc"  # 这是你希望替换的新域名
+
+    # 获取 JSON 数据
     json_data = fetch_json()
     if json_data:
-        # 替换 JSON 中的域名
-        updated_json_data, updated = replace_domain_in_json(json_data, old_domain, new_domain)
+        # 替换域名
+        updated_json = replace_domain_in_json(json_data, old_domain, new_domain)
         
-        if updated:
-            # 推送更新到 GitHub
-            push_to_github(updated_json_data)
+        # 如果有更改，则推送到 GitHub
+        if updated_json != json_data:
+            push_to_github(updated_json)
         else:
             print("No changes were made to the JSON file.")
     else:
