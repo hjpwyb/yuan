@@ -1,6 +1,5 @@
 import json
 import requests
-import base64
 import os
 
 # 从环境变量获取 GitHub Token
@@ -59,8 +58,11 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     
+    # 重新格式化 JSON 数据为字符串，并且保留原始的格式
+    formatted_content = json.dumps(new_data, ensure_ascii=False, indent=2)
+
     # 将新数据转换为 base64 编码
-    encoded_content = base64.b64encode(json.dumps(new_data, ensure_ascii=False).encode('utf-8')).decode('utf-8')
+    encoded_content = base64.b64encode(formatted_content.encode('utf-8')).decode('utf-8')
     
     # 构建请求体
     data = {
