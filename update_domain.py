@@ -4,7 +4,7 @@ import base64
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # 请在这里填写你的 GitHub Token
+GITHUB_TOKEN = "GH_TOKEN  # 请在这里填写你的 GitHub Token
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
