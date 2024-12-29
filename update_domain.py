@@ -1,9 +1,8 @@
 import os
 import requests
-from bs4 import BeautifulSoup
 import json
-import re
 import base64
+import re
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
@@ -16,33 +15,6 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-# 通过URL抓取网页内容
-def fetch_page(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.text
-    else:
-        print(f"Failed to fetch page {url}. Status code: {response.status_code}")
-        return None
-
-# 检查网页内容是否包含有效的域名标志
-def check_for_valid_domain(page_content):
-    soup = BeautifulSoup(page_content, 'html.parser')
-    # 查找特定的字眼“24小时在线匹配首次免费”
-    if "24小时在线匹配首次免费" in soup.get_text():
-        print("Valid domain found on the page!")
-        return True
-    else:
-        return False
-
-# 提取网页中的有效域名
-def extract_valid_domain(url):
-    # 假设有效的域名总是出现在 URL 中
-    match = re.search(r'http://(\S+?)(?=\s|/)', url)  # 提取域名部分
-    if match:
-        return match.group(1)
-    return None
-
 # 获取JSON文件并提取域名
 def fetch_json():
     response = requests.get(GITHUB_URL, headers=HEADERS)
@@ -52,8 +24,11 @@ def fetch_json():
         print(f"Failed to fetch JSON. Status code: {response.status_code}")
         return None
 
-# 替换JSON中所有指定的域名
-def replace_domain_in_json(json_data, old_domain, new_domain):
+# 查找并替换JSON中的数字域名部分
+def replace_numeric_domain_in_json(json_data, old_domain, new_domain):
+    """
+    替换 JSON 中含有数字部分的域名（数字+域名）
+    """
     keys_to_replace = [
         "首页推荐链接",
         "首页片单链接加前缀",
@@ -64,11 +39,18 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
         "直接播放直链视频请求头"
     ]
     
+    # 使用正则表达式查找域名并替换
+    domain_pattern = re.compile(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\d+(\.\d+)+)")
+
     for key in keys_to_replace:
         if key in json_data:
-            json_data[key] = json_data[key].replace(old_domain, new_domain)
-            print(f"Replaced domain in key '{key}'")
-
+            original_content = json_data[key]
+            # 查找并替换域名
+            if isinstance(original_content, str):
+                updated_content = domain_pattern.sub(lambda match: new_domain if match.group(0) == old_domain else match.group(0), original_content)
+                json_data[key] = updated_content
+                print(f"Replaced domain in key '{key}'")
+    
     return json_data
 
 # 将更新后的JSON推送到GitHub
@@ -85,7 +67,7 @@ def push_to_github(updated_json):
             content = base64.b64encode(json_content.encode("utf-8")).decode("utf-8")
             
             data = {
-                "message": "Updated domain in JSON file",
+                "message": "Updated numeric domain in JSON file",
                 "sha": sha,
                 "content": content
             }
@@ -101,36 +83,19 @@ def push_to_github(updated_json):
 
 # 主程序
 def main():
-    base_url = "http://7473ck.cc/vodtype/8-2.html"  # 这是分页的基本URL
-    valid_domain = None
+    old_domain = "7465ck.cc"  # 假设我们要替换的是这个旧域名
+    new_domain = "1234ab.cc"  # 你要替换的新域名
     
-    # 尝试抓取多个分页并检查有效的域名
-    for page_num in range(1, 6):  # 假设最多检查5页
-        page_url = base_url.replace("8-2", f"8-{page_num}")
-        print(f"Checking page: {page_url}")
-        page_content = fetch_page(page_url)
+    # 获取现有的JSON文件
+    json_data = fetch_json()
+    if json_data:
+        # 替换JSON中的域名
+        updated_json = replace_numeric_domain_in_json(json_data, old_domain, new_domain)
         
-        if page_content and check_for_valid_domain(page_content):
-            # 提取有效的域名
-            valid_domain = extract_valid_domain(page_url)
-            if valid_domain:
-                print(f"Found valid domain: {valid_domain}")
-                break
-    
-    if valid_domain:
-        # 获取现有的JSON文件
-        json_data = fetch_json()
-        if json_data:
-            # 替换JSON中的域名
-            old_domain = "7465ck.cc"  # 假设我们要替换的是这个旧域名
-            updated_json = replace_domain_in_json(json_data, old_domain, valid_domain)
-            
-            # 推送更新到GitHub
-            push_to_github(updated_json)
-        else:
-            print("Failed to fetch JSON data.")
+        # 推送更新到GitHub
+        push_to_github(updated_json)
     else:
-        print("No valid domain found in the pages.")
+        print("Failed to fetch JSON data.")
 
 if __name__ == "__main__":
     main()
