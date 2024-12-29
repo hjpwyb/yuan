@@ -1,9 +1,8 @@
 name: Update Domain
 
 on:
-  push:
-    branches:
-      - main  # 当主分支有推送时触发该工作流
+  schedule:
+    - cron: '0 * * * *'  # 每小时的第一分钟执行一次
 
 jobs:
   update-domain:
@@ -26,5 +25,17 @@ jobs:
     
     - name: Run update_domain.py script
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 从 GitHub Secrets 中读取 GitHub Token
-      run: python3 update_domain.py
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: python3 update_domain.py  # 执行更新域名脚本
+
+    - name: Commit and push changes (if any)
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        
+        # 检查文件是否有变动
+        git diff --exit-code || (
+          git add .
+          git commit -m "Update domain in JSON"
+          git push origin HEAD:main
+        )
