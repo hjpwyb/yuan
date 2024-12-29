@@ -5,7 +5,7 @@ import re
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # 填入你的 GitHub Token
+GITHUB_TOKEN = "MY_GITHUB_TOKEN"  # 填入你的 GitHub Token
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Content-Type": "application/json"
