@@ -1,0 +1,28 @@
+name: Update Domain in JSON
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # 每天午夜自动执行（您可以调整这个定时规则）
+
+jobs:
+  update-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run update_domain.py
+        run: |
+          python update_domain.py
