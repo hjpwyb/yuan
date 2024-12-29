@@ -1,9 +1,10 @@
 import json
 import requests
 import base64
+import os
 
-# GitHub 配置信息
-GITHUB_TOKEN = 'your_github_token'  # 你自己的 GitHub Token
+# 获取 GitHub Token 从环境变量
+GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量获取 YOU_TOKEN
 REPO_OWNER = 'hjpwyb'  # 仓库拥有者
 REPO_NAME = 'yuan'  # 仓库名称
 FILE_PATH = 'tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json'  # 文件的路径
