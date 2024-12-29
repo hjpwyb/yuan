@@ -1,57 +1,31 @@
-import json
+import os
 import requests
 
-# 配置您的 GitHub 仓库和文件路径
-github_raw_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json"
-github_api_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/字幕仓库.json"
-github_token = "your_github_token"  # 替换为您的 GitHub Token
+# 从环境变量中获取 GitHub Token
+github_token = os.getenv("MY_GITHUB_TOKEN")
+if not github_token:
+    raise Exception("GitHub token not found in environment variables.")
 
-# 获取 JSON 文件
-response = requests.get(github_raw_url)
+# 设置 GitHub API 请求头，使用 Bearer Token 进行身份验证
+headers = {
+    "Authorization": f"token {github_token}",
+    "Accept": "application/vnd.github.v3+json"
+}
+
+# GitHub API 请求 URL，替换为您需要的 URL（例如获取文件内容）
+github_api_url = "https://api.github.com/repos/{owner}/{repo}/contents/{file_path}"
+
+# 请求 GitHub API 获取文件内容
+response = requests.get(github_api_url, headers=headers)
+
+# 检查响应状态码
 if response.status_code == 200:
-    json_data = response.json()
     print("Successfully fetched JSON.")
-
-    # 在这里修改域名数组
-    updated_domains = ["example.com" for domain in json_data["域名"]]
-
-    # 更新 JSON 数据中的域名部分
-    json_data["域名"] = updated_domains
-
-    # 提交到 GitHub
-    headers = {
-        "Authorization": f"token {github_token}",
-        "Content-Type": "application/json",
-    }
-
-    # 获取文件的 SHA
-    api_response = requests.get(github_api_url, headers=headers)
-    print("API response:", api_response.json())  # 打印响应内容查看返回的数据结构
-
-    try:
-        sha = api_response.json()["sha"]
-    except KeyError:
-        print("Failed to get SHA from response.")
-        print("Response:", api_response.json())
-        exit(1)
-
-    # 通过 GitHub API 提交修改
-    update_data = {
-        "message": "Update domain names in JSON",
-        "committer": {
-            "name": "GitHub Actions",
-            "email": "actions@github.com",
-        },
-        "sha": sha,
-        "content": json.dumps(json_data, ensure_ascii=False),
-    }
-
-    update_url = f"{github_api_url}?ref=main"
-    update_response = requests.put(update_url, json=update_data, headers=headers)
-
-    if update_response.status_code == 200:
-        print("Domain updated successfully!")
-    else:
-        print(f"Failed to update domain: {update_response.status_code}")
+    # 在这里处理返回的 JSON 数据
+    json_data = response.json()
+    # 处理文件的 sha 值等信息
+    sha = json_data['sha']  # 假设返回的 JSON 包含 sha 字段
+    print(f"SHA: {sha}")
 else:
-    print(f"Failed to fetch JSON from GitHub: {response.status_code}")
+    print(f"Failed to fetch file. Status code: {response.status_code}")
+    print(response.json())  # 输出错误信息以帮助调试
