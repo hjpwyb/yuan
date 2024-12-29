@@ -2,8 +2,9 @@ import json
 import requests
 import base64
 import os
+import argparse
 
-# 从环境变量获取 GitHub Token
+# 获取 GitHub Token 从环境变量
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量获取 YOU_TOKEN
 REPO_OWNER = 'hjpwyb'  # 仓库拥有者
 REPO_NAME = 'yuan'  # 仓库名称
@@ -11,9 +12,12 @@ FILE_PATH = 'tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json'  # 文件的
 BRANCH_NAME = 'main'  # 分支名称
 COMMIT_MESSAGE = '更新链接替换'  # 提交信息
 
-# 获取环境变量中的旧链接和新链接
-old_link = os.getenv('OLD_LINK', '7465ck.cc')  # 默认旧链接是 '7465ck.cc'
-new_link = os.getenv('NEW_LINK', '7474ck.cc')  # 默认新链接是 '7474ck.cc'
+# 设置命令行参数
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='替换 JSON 文件中的链接')
+    parser.add_argument('--old-link', required=True, help='旧链接')
+    parser.add_argument('--new-link', required=True, help='新链接')
+    return parser.parse_args()
 
 # 下载 GitHub 上的原始文件内容
 def download_json_file(url):
@@ -79,6 +83,7 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 
 # 主程序
 def main():
+    args = parse_arguments()  # 获取命令行参数
     json_url = 'https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json'
 
     # 下载 JSON 文件
@@ -87,7 +92,7 @@ def main():
         return
 
     # 替换链接
-    updated_data = replace_links_in_json(data, old_link, new_link)
+    updated_data = replace_links_in_json(data, args.old_link, args.new_link)
 
     # 获取文件的 SHA 值
     sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
