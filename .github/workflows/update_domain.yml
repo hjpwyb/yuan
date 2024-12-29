@@ -1,28 +1,51 @@
-name: Update Domain in JSON
+import os
+import requests
+import json
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * *'  # 每天午夜自动执行（您可以调整这个定时规则）
+# 获取 GitHub Token
+token = os.environ.get("MY_GITHUB_TOKEN")
 
-jobs:
-  update-domain:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# 检查 token 是否有效
+if token is None:
+    raise ValueError("GitHub Token 未设置！")
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+# GitHub API 请求的 headers
+headers = {
+    "Authorization": f"token {token}",
+    "Content-Type": "application/json"
+}
 
-      - name: Install dependencies
-        run: |
-          pip install requests
+# GitHub 文件地址
+repo_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
 
-      - name: Run update_domain.py
-        run: |
-          python update_domain.py
+# 请求文件
+response = requests.get(repo_url, headers=headers)
+
+# 检查响应状态
+if response.status_code == 200:
+    file_info = response.json()
+    sha = file_info["sha"]
+    content = file_info["content"]
+    # 解码内容
+    json_data = json.loads(requests.utils.unquote(content))
+
+    # 处理 JSON 数据中的域名
+    json_data['首页推荐链接'] = 'http://7473ck.cc'  # 示例修改
+    json_data['分类链接'] = 'http://7473ck.cc/vodtype/{cateId}-{catePg}.html'
+
+    # 将更新后的内容上传回 GitHub
+    update_url = f"https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+    update_data = {
+        "message": "更新域名",
+        "sha": sha,
+        "content": requests.utils.quote(json.dumps(json_data))
+    }
+
+    update_response = requests.put(update_url, headers=headers, json=update_data)
+
+    if update_response.status_code == 200:
+        print("文件更新成功！")
+    else:
+        print(f"无法更新文件: {update_response.status_code}")
+else:
+    print(f"无法获取文件信息: {response.status_code}, 错误信息: {response.text}")
