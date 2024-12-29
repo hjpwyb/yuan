@@ -2,6 +2,7 @@ import requests
 import base64
 import json
 import os
+import time
 
 # GitHub 文件 URL
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
@@ -39,12 +40,12 @@ def check_url(url):
 
 # 获取 JSON 文件并提取内容
 def fetch_json():
-    response = requests.get(GITHUB_URL, headers=HEADERS)
-    if response.status_code == 200:
+    try:
+        response = requests.get(GITHUB_URL, headers=HEADERS)
+        response.raise_for_status()  # 如果状态码不是200，将抛出异常
         return response.json()
-    else:
-        print(f"Failed to fetch JSON. Status code: {response.status_code}")
-        print(response.text)  # 打印详细错误信息
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to fetch JSON. Error: {e}")
         return None
 
 # 替换 JSON 中的域名
@@ -69,9 +70,10 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
 
 # 将更新后的 JSON 推送到 GitHub
 def push_to_github(updated_json):
-    # 获取文件当前内容的 SHA
-    response = requests.get(GITHUB_URL, headers=HEADERS)
-    if response.status_code == 200:
+    try:
+        # 获取文件当前内容的 SHA
+        response = requests.get(GITHUB_URL, headers=HEADERS)
+        response.raise_for_status()  # 如果状态码不是200，将抛出异常
         sha = response.json().get("sha")
         if sha:
             # Base64 编码更新后的内容
@@ -83,16 +85,12 @@ def push_to_github(updated_json):
                 "content": content
             }
             response = requests.put(GITHUB_URL, headers=HEADERS, json=data)
-            if response.status_code == 200:
-                print("Successfully updated the file on GitHub.")
-            else:
-                print(f"Failed to push changes to GitHub. Status code: {response.status_code}")
-                print(response.text)  # 输出详细错误信息
+            response.raise_for_status()  # 如果状态码不是200，将抛出异常
+            print("Successfully updated the file on GitHub.")
         else:
             print("Failed to get SHA from the response.")
-    else:
-        print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
-        print(response.text)  # 输出详细错误信息
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to push changes to GitHub. Error: {e}")
 
 # 主程序
 def main():
