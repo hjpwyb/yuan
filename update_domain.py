@@ -3,7 +3,7 @@ import re
 import json
 
 # 设置文件和目标URL
-json_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json"
+json_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
@@ -17,19 +17,22 @@ def fetch_json():
         print(f"Failed to fetch JSON. Status code: {response.status_code}")
         return None
 
-# 从JSON数据中提取所有的域名
+# 从JSON数据中提取所有的域名（包含http://或https://前缀）
 def extract_domains(json_data):
     domains = set()
-    # 遍历JSON中的所有值，使用正则表达式提取域名
+    # 域名的正则表达式匹配 http:// 或 https:// 开头的域名
     domain_pattern = re.compile(r"https?://([a-zA-Z0-9.-]+)")
     
-    # 遍历 JSON 中的每个键值对，提取出所有的域名
-    for value in json_data.values():
+    # 遍历 JSON 中的所有键值对，提取出所有的域名
+    for key, value in json_data.items():
         if isinstance(value, str):
             found_domains = domain_pattern.findall(value)
+            if found_domains:
+                print(f"Found domains in key '{key}': {found_domains}")  # 调试输出
             for domain in found_domains:
                 domains.add(domain)
     
+    print(f"Extracted domains: {domains}")  # 调试输出
     return list(domains)
 
 # 自动检测当前域名并选择替换
@@ -38,7 +41,7 @@ def get_current_and_new_domain(json_data):
     domains = extract_domains(json_data)
     
     if len(domains) < 2:
-        print("Insufficient domains found for replacement.")
+        print("Insufficient domains found for replacement.")  # 提示没有足够的域名
         return None, None
     
     # 假设 JSON 中有两个不同的域名，选择第一个作为当前域名
@@ -48,10 +51,10 @@ def get_current_and_new_domain(json_data):
     new_domain = domains[1] if len(domains) > 1 else None
     
     if new_domain:
-        print(f"Found current domain: {current_domain}, preparing to replace with: {new_domain}")
+        print(f"Found current domain: {current_domain}, preparing to replace with: {new_domain}")  # 调试输出
         return current_domain, new_domain
     else:
-        print("No valid domain pair found for replacement.")
+        print("No valid domain pair found for replacement.")  # 提示没有找到合适的域名
         return None, None
 
 # 替换JSON中的域名
@@ -70,6 +73,7 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
     for key in keys_to_replace:
         if key in json_data:
             json_data[key] = json_data[key].replace(old_domain, new_domain)
+            print(f"Replaced domain in key '{key}'")  # 调试输出
     
     return json_data
 
