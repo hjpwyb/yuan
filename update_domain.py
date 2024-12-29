@@ -1,49 +1,31 @@
 import requests
-import random
 import json
+import os
 
-# GitHub API 地址（用于获取和更新文件）
-repo_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-token = "your_github_personal_access_token"  # 在 GitHub 上生成的个人访问令牌
-headers = {"Authorization": f"token {token}", "Content-Type": "application/json"}
+# 获取 GitHub 上的 JSON 文件
+repo_url = "https://raw.githubusercontent.com/username/repository/main/tv/XYQHiker/字幕仓库.json"  # 请根据实际路径修改
+headers = {
+    "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",  # 使用 GitHub Actions 提供的 Token
+}
 
-# 获取现有的 JSON 文件
+# 获取 JSON 文件内容
 response = requests.get(repo_url, headers=headers)
 
 if response.status_code == 200:
-    # 获取文件内容和 sha
-    file_info = response.json()
-    sha = file_info["sha"]
-    content = file_info["content"]
-    
-    # 解码文件内容
-    json_data = json.loads(requests.utils.unquote(content))
-    
-    # 随机选择一个域名
-    domain = random.choice(["7473", "7474", "7475", "7476", "7477", "7478", "7479", "7480"])
-    
-    # 更新 JSON 文件中的域名部分
-    json_data["首页推荐链接"] = json_data["首页推荐链接"].replace("{domain}", domain)
-    json_data["分类链接"] = json_data["分类链接"].replace("{domain}", domain)
-    json_data["搜索链接"] = json_data["搜索链接"].replace("{domain}", domain)
-    json_data["搜索片单链接加前缀"] = json_data["搜索片单链接加前缀"].replace("{domain}", domain)
-    
-    # 生成更新后的 JSON 内容
-    updated_content = json.dumps(json_data, indent=4)
-
-    # GitHub API 请求体
-    data = {
-        "message": "Update domain in config.json",
-        "content": updated_content,
-        "sha": sha
-    }
-
-    # 提交更新
-    update_response = requests.put(repo_url, headers=headers, json=data)
-
-    if update_response.status_code == 200:
-        print("文件更新成功！")
-    else:
-        print(f"更新失败: {update_response.status_code}")
+    json_data = response.json()
 else:
-    print(f"无法获取文件信息: {response.status_code}")
+    raise Exception(f"Failed to fetch JSON from GitHub: {response.status_code}")
+
+# 更新 JSON 数据（示例：更改 domain 部分）
+# 假设您要替换 JSON 中的某个字段（例如 '首页推荐链接'）
+for domain in ['7473', '7474', '7475', '7476']:
+    json_data['首页推荐链接'] = f"http://{domain}ck.cc"
+
+# 保存更新后的 JSON 文件
+json_file_path = 'tv/XYQHiker/字幕库.json'  # 请确保路径正确
+
+# 将更新后的 JSON 内容写入文件
+with open(json_file_path, 'w', encoding='utf-8') as f:
+    json.dump(json_data, f, ensure_ascii=False, indent=4)
+
+print("Domain updated successfully!")
