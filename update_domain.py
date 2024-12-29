@@ -1,115 +1,102 @@
-import json
 import requests
 import re
-from time import sleep
-from datetime import datetime
+import json
 
-# GitHub 配置
-GITHUB_TOKEN = "YOUR_ACTUAL_GITHUB_TOKEN"  # 请替换为您的 GitHub Token
-OWNER = "hjpwyb"
-REPO = "yuan"
-FILE_PATH = "tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-GITHUB_API_URL = f"https://api.github.com/repos/{OWNER}/{REPO}/contents/{FILE_PATH}"
+# 设置文件和目标URL
+json_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
 
-# 要匹配的特定字样
-VALID_KEYWORDS = "24小时在线匹配首次免费"
-BASE_URL = "http://7470ck.cc/vodtype/8-{page}.html"  # 假设分类页面的 URL 格式
-
-# 获取当前日期和时间
-def get_current_time():
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-# 获取文件内容
-def fetch_file():
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    response = requests.get(GITHUB_API_URL, headers=headers)
+# 获取JSON文件内容
+def fetch_json():
+    response = requests.get(json_url, headers=headers)
     if response.status_code == 200:
         return response.json()
     else:
-        print(f"[{get_current_time()}] Failed to fetch file. Status code: {response.status_code}")
+        print(f"Failed to fetch JSON. Status code: {response.status_code}")
         return None
 
-# 获取文件的 SHA 值
-def get_file_sha():
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    response = requests.get(GITHUB_API_URL, headers=headers)
-    if response.status_code == 200:
-        return response.json()["sha"]
-    else:
-        print(f"[{get_current_time()}] Failed to fetch SHA. Status code: {response.status_code}")
-        return None
+# 检查网页中是否包含有效的域名
+def find_valid_domain():
+    test_domains = ["7465ck.cc", "7473ck.cc", "example.com"]  # 你可以在这里添加更多的尝试域名
+    for domain in test_domains:
+        test_url = f"http://{domain}/vodtype/8-2.html"
+        try:
+            page = requests.get(test_url, headers=headers)
+            if page.status_code == 200:
+                print(f"Trying domain: {domain}")
+                # 如果网页内容包含"24小时在线匹配首次免费"，则返回该域名
+                if "24小时在线匹配首次免费" in page.text:
+                    print(f"Found valid domain: {domain}")
+                    return domain  # 返回有效的域名
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching test URL: {test_url} - {e}")
+    return None
 
-# 更新 JSON 文件中的域名
-def update_json_file(json_data, new_domain, sha):
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    commit_message = f"Update domain to {new_domain} in JSON file"
+# 替换JSON中的域名
+def replace_domain_in_json(json_data, new_domain):
+    keys_to_replace = [
+        "首页推荐链接",
+        "首页片单链接加前缀",
+        "分类链接",
+        "分类片单链接加前缀",
+        "搜索链接",
+        "搜索片单链接加前缀",
+        "直接播放直链视频请求头"
+    ]
+    
+    for key in keys_to_replace:
+        if key in json_data:
+            json_data[key] = json_data[key].replace("7473ck.cc", new_domain)
+    
+    return json_data
 
-    # 更新 JSON 数据中的所有域名字段
-    for key in json_data:
-        if isinstance(json_data[key], str) and '7470ck.cc' in json_data[key]:
-            json_data[key] = json_data[key].replace('7470ck.cc', new_domain)
-
-    # 推送更新
-    data = {
-        "message": commit_message,
-        "content": json.dumps(json_data, ensure_ascii=False),  # 将 JSON 转为字符串
-        "sha": sha
+# 推送更新后的JSON到GitHub
+def push_to_github(updated_json):
+    github_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+    token = "YOUR_GITHUB_TOKEN"  # 在这里替换为你的GitHub Token
+    headers = {
+        "Authorization": f"token {token}",
+        "Content-Type": "application/json"
     }
 
-    response = requests.put(GITHUB_API_URL, headers=headers, json=data)
+    # 获取文件当前内容的SHA
+    response = requests.get(github_url, headers=headers)
     if response.status_code == 200:
-        print(f"[{get_current_time()}] Successfully updated the file.")
-    else:
-        print(f"[{get_current_time()}] Failed to update the file. Status code: {response.status_code}")
-        print(f"Response: {response.json()}")
-
-# 尝试访问分类页并判断是否为有效域名
-def check_valid_domain(page_number):
-    url = BASE_URL.format(page=page_number)
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        page_content = response.text
-        if VALID_KEYWORDS in page_content:
-            print(f"[{get_current_time()}] Found valid domain at page {page_number}")
-            domain_match = re.search(r"(http://\d{4,5})", page_content)
-            if domain_match:
-                return domain_match.group(1)  # 返回有效域名
+        sha = response.json().get("sha")
+        if sha:
+            data = {
+                "message": "Updated domain in JSON file",
+                "sha": sha,
+                "content": json.dumps(updated_json, ensure_ascii=False).encode("utf-8").decode("utf-8")
+            }
+            response = requests.put(github_url, headers=headers, json=data)
+            if response.status_code == 200:
+                print("Successfully updated the file on GitHub.")
+            else:
+                print(f"Failed to push changes to GitHub. Status code: {response.status_code}")
         else:
-            print(f"[{get_current_time()}] No valid keyword found on page {page_number}")
+            print("Failed to get SHA from the response.")
     else:
-        print(f"[{get_current_time()}] Failed to fetch page {page_number}. Status code: {response.status_code}")
-    return None
+        print(f"Failed to fetch file from GitHub. Status code: {response.status_code}")
 
 # 主程序
 def main():
-    sha = get_file_sha()  # 获取文件的 SHA 值
-    if sha:
-        json_data = fetch_file()  # 获取文件内容
+    # 获取当前有效域名
+    new_domain = find_valid_domain()
+    if new_domain:
+        # 获取现有JSON数据
+        json_data = fetch_json()
         if json_data:
-            valid_domain = None
-            page_number = 2  # 从第二页开始检查
-            while valid_domain is None and page_number < 100:  # 假设最多检查 100 页
-                valid_domain = check_valid_domain(page_number)
-                page_number += 1
-                sleep(2)  # 等待 2 秒钟再试下一页
-
-            if valid_domain:
-                print(f"[{get_current_time()}] Valid domain found: {valid_domain}")
-                update_json_file(json_data, valid_domain, sha)  # 更新 JSON 文件
-            else:
-                print(f"[{get_current_time()}] No valid domain found.")
+            # 更新JSON中的域名
+            updated_json = replace_domain_in_json(json_data, new_domain)
+            # 推送更新后的文件到GitHub
+            push_to_github(updated_json)
         else:
-            print(f"[{get_current_time()}] Error fetching JSON file.")
+            print("Error fetching JSON data.")
     else:
-        print(f"[{get_current_time()}] Failed to fetch SHA.")
-
-# 定时执行更新
-def schedule_updates():
-    while True:
-        main()
-        print(f"[{get_current_time()}] Waiting for next update...")
-        sleep(3600)  # 每小时更新一次
+        print("No valid domain found.")
 
 if __name__ == "__main__":
-    schedule_updates()
+    main()
