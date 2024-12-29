@@ -3,7 +3,7 @@ import re
 import json
 
 # 设置文件和目标URL
-json_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+json_url = "https://raw.githubusercontent.com/hjpwyb/yuan/main/tv/XYQHiker/字幕仓库.json"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
