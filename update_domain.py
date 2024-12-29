@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
+import base64
 
 # GitHub 更新部分
 GITHUB_URL = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
@@ -77,10 +78,13 @@ def push_to_github(updated_json):
     if response.status_code == 200:
         sha = response.json().get("sha")
         if sha:
+            # Base64 编码更新后的内容
+            content = base64.b64encode(json.dumps(updated_json, ensure_ascii=False).encode("utf-8")).decode("utf-8")
+            
             data = {
                 "message": "Updated domain in JSON file",
                 "sha": sha,
-                "content": json.dumps(updated_json, ensure_ascii=False).encode("utf-8").decode("utf-8")
+                "content": content
             }
             response = requests.put(GITHUB_URL, headers=HEADERS, json=data)
             if response.status_code == 200:
