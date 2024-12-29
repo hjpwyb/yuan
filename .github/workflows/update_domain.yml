@@ -1,51 +1,28 @@
-import os
-import requests
-import json
+name: Update Domain for JSON
 
-# 获取 GitHub Token
-token = os.environ.get("MY_GITHUB_TOKEN")
+on:
+  push:
+    paths:
+      - tv/XYQHiker/*.json  # 监控JSON文件夹的变动
+  workflow_dispatch:  # 手动触发
 
-# 检查 token 是否有效
-if token is None:
-    raise ValueError("GitHub Token 未设置！")
+jobs:
+  update_domain:
+    runs-on: ubuntu-latest
 
-# GitHub API 请求的 headers
-headers = {
-    "Authorization": f"token {token}",
-    "Content-Type": "application/json"
-}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-# GitHub 文件地址
-repo_url = "https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # 您可以选择其他版本
 
-# 请求文件
-response = requests.get(repo_url, headers=headers)
+      - name: Install dependencies
+        run: |
+          pip install requests  # 如果您的 Python 脚本依赖其他库，请在这里添加
 
-# 检查响应状态
-if response.status_code == 200:
-    file_info = response.json()
-    sha = file_info["sha"]
-    content = file_info["content"]
-    # 解码内容
-    json_data = json.loads(requests.utils.unquote(content))
-
-    # 处理 JSON 数据中的域名
-    json_data['首页推荐链接'] = 'http://7473ck.cc'  # 示例修改
-    json_data['分类链接'] = 'http://7473ck.cc/vodtype/{cateId}-{catePg}.html'
-
-    # 将更新后的内容上传回 GitHub
-    update_url = f"https://api.github.com/repos/hjpwyb/yuan/contents/tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json"
-    update_data = {
-        "message": "更新域名",
-        "sha": sha,
-        "content": requests.utils.quote(json.dumps(json_data))
-    }
-
-    update_response = requests.put(update_url, headers=headers, json=update_data)
-
-    if update_response.status_code == 200:
-        print("文件更新成功！")
-    else:
-        print(f"无法更新文件: {update_response.status_code}")
-else:
-    print(f"无法获取文件信息: {response.status_code}, 错误信息: {response.text}")
+      - name: Run Python script to update domain in JSON
+        run: |
+          python3 update_domain.py  # 运行您的 Python 脚本
