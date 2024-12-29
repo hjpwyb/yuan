@@ -40,13 +40,18 @@ def replace_domain_in_json(json_data, old_domain, new_domain):
     
     changed = False  # 标记是否发生了变化
     
+    # 输出当前 JSON 内容
+    print("Current JSON data:")
+    print(json.dumps(json_data, ensure_ascii=False, indent=2))
+    
     for key in keys_to_replace:
         if key in json_data:
-            new_value = json_data[key].replace(old_domain, new_domain)
-            if new_value != json_data[key]:
-                changed = True
+            # 检查是否包含旧域名
+            if old_domain in json_data[key]:
+                print(f"Replacing domain in key '{key}': {json_data[key]} -> {json_data[key].replace(old_domain, new_domain)}")
+                new_value = json_data[key].replace(old_domain, new_domain)
                 json_data[key] = new_value
-                print(f"Replaced domain in key '{key}'")
+                changed = True
     
     return json_data, changed
 
@@ -101,8 +106,8 @@ def test_domains(start_domain, num_tests=5):
 
 # 主程序
 def main():
-    old_domain = "7463ck.cc"  # 假设要替换的旧域名
-    start_domain = "7463ck.cc"  # 开始测试的域名
+    old_domain = "7465ck.cc"  # 假设要替换的旧域名
+    start_domain = "7465ck.cc"  # 开始测试的域名
 
     # 试错获取有效域名
     valid_domain = test_domains(start_domain)
