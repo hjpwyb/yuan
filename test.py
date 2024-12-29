@@ -1,5 +1,14 @@
 import json
 import requests
+import base64
+
+# GitHub 配置信息
+GITHUB_TOKEN = 'your_github_token'  # 你自己的 GitHub Token
+REPO_OWNER = 'hjpwyb'  # 仓库拥有者
+REPO_NAME = 'yuan'  # 仓库名称
+FILE_PATH = 'tv/XYQHiker/%E5%AD%97%E5%B9%95%E4%BB%93%E5%BA%93.json'  # 文件的路径
+BRANCH_NAME = 'main'  # 分支名称
+COMMIT_MESSAGE = '更新链接替换'  # 提交信息
 
 # 下载 GitHub 上的原始文件内容
 def download_json_file(url):
@@ -34,14 +43,40 @@ def replace_links_in_json(data, old_link, new_link):
     replace_in_dict(data)
     return data
 
-# 保存修改后的 JSON 文件
-def save_json_file(data, json_file_path):
-    try:
-        with open(json_file_path, 'w', encoding='utf-8') as file:
-            json.dump(data, file, ensure_ascii=False, indent=4)
-        print(f"文件已保存为 {json_file_path}")
-    except Exception as e:
-        print(f"保存文件时发生错误: {e}")
+# 获取文件的 SHA 值
+def get_file_sha(repo_owner, repo_name, file_path, branch):
+    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}?ref={branch}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        file_info = response.json()
+        return file_info['sha']
+    else:
+        print(f"无法获取文件 SHA 值: {response.status_code}")
+        return None
+
+# 更新 GitHub 上的文件内容
+def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, commit_message):
+    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    
+    # 将新数据转换为 base64 编码
+    encoded_content = base64.b64encode(json.dumps(new_data, ensure_ascii=False).encode('utf-8')).decode('utf-8')
+    
+    # 构建请求体
+    data = {
+        "message": commit_message,
+        "content": encoded_content,
+        "sha": sha,  # 文件的 SHA 值
+        "branch": branch
+    }
+    
+    # 发送 PUT 请求更新文件
+    response = requests.put(url, headers=headers, json=data)
+    if response.status_code == 200:
+        print(f"文件已成功更新！")
+    else:
+        print(f"更新文件时发生错误: {response.status_code} - {response.text}")
 
 # 主程序
 def main():
@@ -58,8 +93,13 @@ def main():
     # 替换链接
     updated_data = replace_links_in_json(data, old_link, new_link)
 
-    # 保存修改后的文件到本地
-    save_json_file(updated_data, 'updated_file.json')
+    # 获取文件的 SHA 值
+    sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
+    if sha is None:
+        return
+
+    # 更新文件
+    update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, updated_data, sha, BRANCH_NAME, COMMIT_MESSAGE)
 
 # 运行主程序
 if __name__ == "__main__":
