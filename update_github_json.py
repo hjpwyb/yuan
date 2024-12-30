@@ -2,6 +2,7 @@ import json
 import requests
 import os
 import base64
+import re  # 导入正则表达式模块
 
 # 从环境变量获取 GitHub Token
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')
@@ -34,14 +35,16 @@ def download_valid_links():
         return []
 
 # 替换链接
-def replace_links_in_json(data, old_link, new_links):
+def replace_links_in_json(data, old_link_pattern, new_links):
     def replace_in_dict(d):
         for key, value in d.items():
             if isinstance(value, str):  # 如果值是字符串
-                if old_link in value:
+                # 使用正则表达式匹配并替换符合模式的链接
+                matches = re.findall(old_link_pattern, value)
+                for old_link in matches:
                     for new_link in new_links:
                         value = value.replace(old_link, new_link)
-                    d[key] = value
+                d[key] = value
             elif isinstance(value, dict):  # 如果值是字典，递归替换
                 replace_in_dict(value)
             elif isinstance(value, list):  # 如果值是列表，递归替换
@@ -49,8 +52,10 @@ def replace_links_in_json(data, old_link, new_links):
                     if isinstance(item, dict):
                         replace_in_dict(item)
                     elif isinstance(item, str):
-                        if old_link in item:
-                            item = item.replace(old_link, new_link)
+                        matches = re.findall(old_link_pattern, item)
+                        for old_link in matches:
+                            for new_link in new_links:
+                                item = item.replace(old_link, new_link)
 
     # 开始替换
     replace_in_dict(data)
@@ -98,7 +103,9 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 def main():
     # GitHub 上 JSON 文件的原始 URL
     json_url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}'
-    old_link = 'http://7465ck.cc'  # 要替换的旧链接
+    
+    # 定义匹配旧链接的正则表达式 (匹配 http://<数字>ck.cc 格式)
+    old_link_pattern = r'http://\d+ck\.cc'
 
     # 下载 valid_links.txt 中的所有新链接
     new_links = download_valid_links()
@@ -112,7 +119,7 @@ def main():
         return
 
     # 替换链接
-    updated_data = replace_links_in_json(data, old_link, new_links)
+    updated_data = replace_links_in_json(data, old_link_pattern, new_links)
 
     # 获取文件的 SHA 值
     sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
