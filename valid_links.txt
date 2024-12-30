@@ -1,1 +1,3 @@
-http://7475ck.cc
+[
+  "http://7475ck.cc"
+]
