@@ -122,15 +122,16 @@ def main():
     # 更新 JSON 文件
     update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, updated_data, sha, BRANCH_NAME, COMMIT_MESSAGE)
 
-    # 更新 valid_links.txt 文件，只保留有效的链接
-    valid_links_to_save = [link for link in new_links if old_link in link]  # 仅保留包含旧链接的有效链接
-    if valid_links_to_save:
-        # 将有效链接保存到 valid_links.txt
+    # 更新 valid_links.txt 文件，保留所有有效链接
+    if new_links:
+        # 获取 valid_links.txt 文件的 SHA 值
         sha_valid_links = get_file_sha(REPO_OWNER, REPO_NAME, VALID_LINKS_FILE_PATH, BRANCH_NAME)
         if sha_valid_links is None:
             print("无法获取 valid_links.txt 的 SHA 值.")
             return
-        update_github_file(REPO_OWNER, REPO_NAME, VALID_LINKS_FILE_PATH, valid_links_to_save, sha_valid_links, BRANCH_NAME, '更新有效链接')
+
+        # 更新 valid_links.txt 文件为最新的有效链接
+        update_github_file(REPO_OWNER, REPO_NAME, VALID_LINKS_FILE_PATH, new_links, sha_valid_links, BRANCH_NAME, '更新有效链接')
 
 # 运行主程序
 if __name__ == "__main__":
