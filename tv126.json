@@ -620,14 +620,14 @@
             }
         },
         {
-            "key": "csp_XYQHiker_色花堂",
-            "name": "🔞色花堂(XYQHiker)",
+            "key": "csp_XYQHiker_170av",
+            "name": "🔞170av(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/色花堂.json",
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/170av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
