@@ -1,7 +1,6 @@
 import requests
 import os
 import base64
-import json
 from urllib.parse import urlparse
 
 # GitHub 配置
@@ -52,7 +51,7 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     
     # 重新格式化文件内容（每个链接占一行）
-    formatted_content = "\n".join(new_data)
+    formatted_content = "\n".join(new_data)  # 每个链接单独占一行
 
     # 将内容编码为 base64
     encoded_content = base64.b64encode(formatted_content.encode('utf-8')).decode('utf-8')
