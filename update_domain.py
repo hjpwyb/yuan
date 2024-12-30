@@ -51,7 +51,7 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     
-    # 重新格式化文件内容
+    # 重新格式化文件内容（每个链接占一行）
     formatted_content = "\n".join(new_data)
 
     # 将内容编码为 base64
