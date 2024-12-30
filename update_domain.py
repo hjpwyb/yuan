@@ -46,7 +46,7 @@ def get_file_sha(repo_owner, repo_name, file_path, branch):
         print(f"无法获取文件 SHA 值: {response.status_code}")
         return None
 
-# 更新 GitHub 上的文件内容
+# 更新 GitHub 上的文件内容（覆盖原文件）
 def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, commit_message):
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
@@ -103,9 +103,9 @@ def main():
                 current_links = response.text.splitlines()
 
         # 更新链接：首先删除掉失效的旧网址
-        updated_links = list(set(valid_links + current_links))  # 合并新旧链接，去重
+        updated_links = list(set(valid_links))  # 去重有效链接
 
-        # 更新 GitHub 上的文件
+        # 更新 GitHub 上的文件，覆盖原文件
         update_github_file(REPO_OWNER, REPO_NAME, FILE_PATH, updated_links, sha, BRANCH_NAME, COMMIT_MESSAGE)
     else:
         print("没有找到有效的链接。")
