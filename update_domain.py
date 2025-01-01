@@ -75,7 +75,7 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 
 # 主程序
 def main():
-    base_url = "http://7465ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
+    base_url = "http://7365hsck.cc/vodtype/9-2.html"  # 要测试的基本 URL
     valid_links = []  # 存储有效链接
 
     # 进行试错，依次更换URL中的数字部分
