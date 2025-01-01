@@ -105,7 +105,7 @@ def main():
     json_url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}'
 
     # 定义匹配旧链接的正则表达式 (匹配 http://<数字>ck.cc 格式)
-    old_link_pattern = r'http://\d+ck\.cc'
+    old_link_pattern = r'http://\d+hsck\.cc'
 
     # 下载 valid_links.txt 中的所有新链接
     new_links = download_valid_links()
