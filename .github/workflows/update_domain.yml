@@ -1,46 +1,45 @@
 name: Update Domain
 
 on:
-  workflow_dispatch:  # 手动触发工作流
+  workflow_dispatch:  # 支持手动触发
   schedule:
     - cron: '0 * * * *'  # 每小时的第一分钟执行一次
 
 jobs:
   update-domain:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 使用 Ubuntu 最新镜像作为运行环境
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2  # 检出仓库代码
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v2  # 设置 Python 环境
       with:
         python-version: '3.x'
 
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install requests
-        pip install beautifulsoup4
+        pip install requests beautifulsoup4  # 安装依赖
 
     - name: Run update_domain.py script
       env:
-        YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 从 GitHub Secrets 中读取 GitHub Token
+        YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 读取 GitHub Secrets 中的 Token
       run: |
         echo "Running update_domain.py script..."
-        python3 update_domain.py  # 执行更新域名脚本
+        python3 update_domain.py  # 执行域名更新脚本
 
     - name: Commit and push changes (if any)
       run: |
+        # 配置 Git 用户信息
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        
-        git status  # 查看当前文件状态，确认是否有变动
-        
-        # 如果文件发生变化，则提交并推送
-        git diff --exit-code || (
-          git add .
-          git commit -m "Update domain in JSON"
-          git push origin HEAD:main
-        )
+
+        # 检查是否有文件变更，仅针对 JB 文件夹内容
+        git status --untracked-files=all --short | grep "JB/" || exit 0  # 如果没有变化，则退出
+
+        # 提交并推送更改
+        git add JB/valid_links2.txt  # 仅提交目标文件
+        git commit -m "Update valid domain links"
+        git push origin HEAD:main
