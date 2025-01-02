@@ -28,7 +28,7 @@ jobs:
         YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 读取 GitHub Secrets 中的 Token
       run: |
         echo "Running update_domain.py script..."
-        python3 update_domain.py  # 执行域名更新脚本
+        python3 JB/update_domain.py  # 执行位于 JB 文件夹下的域名更新脚本
 
     - name: Commit and push changes (if any)
       run: |
