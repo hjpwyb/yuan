@@ -27,4 +27,11 @@ jobs:
       - name: Run JSON Update Script
         env:
           YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # GitHub Secrets 中的 Token
-        run: python JB/update_github_json2.py  # 调用脚本，假设脚本存放在 JB 文件夹下
+        run: python JB/update_github_json2.py
+
+      - name: Show updated JSON content
+        run: |
+          echo "=== 更新后的 valid_links.txt 文件内容 ==="
+          cat JB/valid_links.txt
+          echo "=== 更新后的 JSON 文件内容 ==="
+          cat JB/黄色仓库.json
