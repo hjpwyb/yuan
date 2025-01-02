@@ -8,7 +8,7 @@ GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量中获取 GitHub Token
 REPO_OWNER = 'hjpwyb'  # 仓库拥有者
 REPO_NAME = 'yuan'  # 仓库名称
 BRANCH_NAME = 'main'  # 分支名称
-FILE_PATH = 'valid_links.txt'  # 要上传的文件路径
+FILE_PATH = 'JB/valid_links2.txt'  # 要上传的文件路径
 COMMIT_MESSAGE = '更新有效链接'  # 提交信息
 
 # 尝试访问指定网址并返回有效性
