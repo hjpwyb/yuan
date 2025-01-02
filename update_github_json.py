@@ -39,25 +39,24 @@ def replace_links_in_json(data, old_link_pattern, new_links):
     def replace_in_dict(d):
         for key, value in d.items():
             if isinstance(value, str):  # 如果值是字符串
-                # 使用正则表达式匹配并替换符合模式的链接
+                # 使用正则表达式查找并替换匹配的旧链接
                 matches = re.findall(old_link_pattern, value)
-                for old_link in matches:
-                    for new_link in new_links:
-                        value = value.replace(old_link, new_link)
+                for idx, old_link in enumerate(matches):
+                    if idx < len(new_links):  # 确保有足够的新链接
+                        value = value.replace(old_link, new_links[idx])
                 d[key] = value
             elif isinstance(value, dict):  # 如果值是字典，递归替换
                 replace_in_dict(value)
             elif isinstance(value, list):  # 如果值是列表，递归替换
-                for item in value:
-                    if isinstance(item, dict):
-                        replace_in_dict(item)
-                    elif isinstance(item, str):
-                        matches = re.findall(old_link_pattern, item)
-                        for old_link in matches:
-                            for new_link in new_links:
-                                item = item.replace(old_link, new_link)
+                for i in range(len(value)):
+                    if isinstance(value[i], dict):
+                        replace_in_dict(value[i])
+                    elif isinstance(value[i], str):
+                        matches = re.findall(old_link_pattern, value[i])
+                        for idx, old_link in enumerate(matches):
+                            if idx < len(new_links):
+                                value[i] = value[i].replace(old_link, new_links[idx])
 
-    # 开始替换
     replace_in_dict(data)
     return data
 
@@ -77,13 +76,13 @@ def get_file_sha(repo_owner, repo_name, file_path, branch):
 def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, commit_message):
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    
+
     # 重新格式化 JSON 数据为字符串，并且保留原始的格式
     formatted_content = json.dumps(new_data, ensure_ascii=False, indent=2)
 
     # 将新数据转换为 base64 编码
     encoded_content = base64.b64encode(formatted_content.encode('utf-8')).decode('utf-8')
-    
+
     # 构建请求体
     data = {
         "message": commit_message,
@@ -91,7 +90,7 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
         "sha": sha,  # 文件的 SHA 值
         "branch": branch
     }
-    
+
     # 发送 PUT 请求更新文件
     response = requests.put(url, headers=headers, json=data)
     if response.status_code == 200:
@@ -104,7 +103,7 @@ def main():
     # GitHub 上 JSON 文件的原始 URL
     json_url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}'
 
-    # 定义匹配旧链接的正则表达式 (匹配 http://<数字>ck.cc 格式)
+    # 定义匹配旧链接的正则表达式 (匹配 http://<数字>hsck.cc 格式)
     old_link_pattern = r'http://\d+hsck\.cc'
 
     # 下载 valid_links.txt 中的所有新链接
@@ -113,6 +112,9 @@ def main():
         print("没有有效链接可用.")
         return
 
+    # 打印新链接列表供调试
+    print("新链接列表:", new_links)
+
     # 下载 JSON 文件
     data = download_json_file(json_url)
     if data is None:
@@ -120,6 +122,7 @@ def main():
 
     # 替换链接
     updated_data = replace_links_in_json(data, old_link_pattern, new_links)
+    print("替换后的 JSON 数据：", json.dumps(updated_data, indent=2, ensure_ascii=False))  # 调试用
 
     # 获取文件的 SHA 值
     sha = get_file_sha(REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH_NAME)
