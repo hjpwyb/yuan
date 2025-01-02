@@ -1,9 +1,10 @@
 name: Auto Update GitHub File
 
 on:
-  workflow_dispatch:  # 允许手动触发
-  schedule:
-    - cron: '0 * * * *'  # 每小时触发一次
+  push:
+    paths:
+      - JB/valid_links2.txt  # 仅当这个文件发生变更时触发
+  workflow_dispatch:  # 手动触发
 
 jobs:
   update-file:
