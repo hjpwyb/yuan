@@ -10,20 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 检出代码
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 设置 Python 环境
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
+      # 安装依赖
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests
 
+      # 运行更新脚本
       - name: Run update script
         env:
           YOU_TOKEN: ${{ secrets.YOU_TOKEN }}  # 从 GitHub Secrets 获取 Token
-        run: python update_github_json.py
+        run: |
+          cd JB  # 切换到 JB 文件夹
+          python update_github_json.py
