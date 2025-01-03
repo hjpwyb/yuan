@@ -247,14 +247,14 @@
             "name": "B站 | Bili[jar]",
             "type": 3,
             "api": "csp_Bili",
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/bili.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/bili.json"
         },
         {
             "key": "AList",
             "name": "网盘 | Alist[jar]",
             "type": 3,
             "api": "csp_AList",
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/alist.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/alist.json"
         },
         {
             "key": "drpy_js_Alist",
@@ -1257,7 +1257,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/dmxq.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/dmxq.json"
         },
         {
             "key": "csp_biubiu_dmxqxb",
@@ -1267,7 +1267,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/dmxqxb.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/dmxqxb.json"
         },
         {
             "key": "csp_biubiu_厂长资源",
@@ -1277,7 +1277,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/厂长资源.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/厂长资源.json"
         },
         {
             "key": "csp_xBPQ_netflytv",
@@ -1287,7 +1287,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/netflytv.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/netflytv.json"
         },
         {
             "key": "csp_xBPQ_smdyy",
@@ -1297,7 +1297,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/神马影院.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/神马影院.json"
         },
         {
             "key": "csp_xBPQ_555dy",
@@ -1307,7 +1307,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/555电影.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/555电影.json"
         },
         {
             "key": "csp_xBPQ_FreeOK",
@@ -1317,7 +1317,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/FreeOK.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/FreeOK.json"
         },
         {
             "key": "csp_xBPQ_莫扎兔",
@@ -1327,7 +1327,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/莫扎兔.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/xBPQ/莫扎兔.json"
         },
         {
             "key": "csp_biubiu_yanaifeicom",
@@ -1337,7 +1337,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/yanaifeicom.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/yanaifeicom.json"
         },
         {
             "key": "csp_biubiu_netflixdog",
@@ -1347,7 +1347,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/netflixdog.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/netflixdog.json"
         },
         {
             "key": "csp_biubiu_ioletv",
@@ -1357,7 +1357,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/ioletv.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/ioletv.json"
         },
         {
             "key": "csp_biubiu_niketv",
@@ -1367,7 +1367,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/niketv.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/niketv.json"
         },
         {
             "key": "csp_biubiu_不卡",
@@ -1377,7 +1377,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/不卡.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/不卡.json"
         },
         {
             "key": "csp_biubiu_真不卡",
@@ -1387,7 +1387,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/真不卡.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/真不卡.json"
         },
         {
             "key": "csp_biubiu_真不卡2",
@@ -1397,7 +1397,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/真不卡2.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/真不卡2.json"
         },
         {
             "key": "csp_biubiu_酷云",
@@ -1407,7 +1407,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/酷云.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/酷云.json"
         },
         {
             "key": "csp_biubiu_酷云2",
@@ -1417,7 +1417,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/酷云2.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XB/酷云2.json"
         },
         {
             "key": "csp_XYQHiker_酷云高清影院",
@@ -1427,7 +1427,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XYQHiker/kuyunhd.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XYQHiker/kuyunhd.json"
         },
         {
             "key": "csp_XYQHiker_冷曦影院",
@@ -1437,7 +1437,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XYQHiker/lenxi.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/XYQHiker/lenxi.json"
         },
         {
             "key": "csp_xBPQ_奈落影院",
@@ -1447,7 +1447,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/奈落影院.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/奈落影院.json"
         },
         {
             "key": "csp_xBPQ_F7好看剧",
@@ -1457,7 +1457,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/F7好看剧.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/F7好看剧.json"
         },
         {
             "key": "csp_xBPQ_锐行影院",
@@ -1467,7 +1467,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/锐行影院.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/锐行影院.json"
         },
         {
             "key": "csp_xBPQ_app影视",
@@ -1477,7 +1477,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/app影视.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/app影视.json"
         },
         {
             "key": "csp_xBPQ_Fositv",
@@ -1487,7 +1487,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/Fositv.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/Fositv.json"
         },
         {
             "key": "csp_xBPQ_hoho",
@@ -1497,7 +1497,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/hoho.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/hoho.json"
         },
         {
             "key": "csp_xBPQ_小强迷",
@@ -1507,7 +1507,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/小强迷.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/小强迷.json"
         },
         {
             "key": "csp_xBPQ_奈非电影",
@@ -1517,7 +1517,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/奈非电影.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/奈非电影.json"
         },
         {
             "key": "csp_xBPQ_达达龟",
@@ -1527,7 +1527,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/达达龟.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/达达龟.json"
         },
         {
             "key": "csp_xBPQ_热播酷",
@@ -1537,7 +1537,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/热播酷.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/热播酷.json"
         },
         {
             "key": "csp_xbb_tegou",
@@ -1547,7 +1547,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/炫猫影视.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/炫猫影视.json"
         },
         {
             "key": "csp_xBPQ_饭团TV",
@@ -1557,7 +1557,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/饭团TV.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/饭团TV.json"
         },
         {
             "key": "csp_xBPQ_小小影视",
@@ -1567,7 +1567,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/小小影视.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/小小影视.json"
         },
         {
             "key": "椰子采集",
@@ -1610,14 +1610,14 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/tvbox/main/好看影视.json"
+            "ext": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/tvbox/main/好看影视.json"
         }
     ],
     "lives": [
         {
             "name": "live",
             "type": 0,
-            "url": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/live.txt",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tv/live.txt",
             "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         }
