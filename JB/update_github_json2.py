@@ -10,7 +10,7 @@ from typing import List, Dict
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')
 REPO_OWNER = 'hjpwyb'
 REPO_NAME = 'yuan'
-FILE_PATH = 'tv/XYQHiker/黄色仓库.json'
+FILE_PATH = 'tv/XYQHiker/字幕仓库.json'
 BRANCH_NAME = 'main'
 COMMIT_MESSAGE = '更新链接替换'
 VALID_LINKS_FILE_PATH = 'JB/valid_links.txt'
