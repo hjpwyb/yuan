@@ -1,7 +1,6 @@
 import json
 import requests
 import base64
-import re
 import urllib.parse
 import os
 
@@ -38,39 +37,17 @@ def download_json_file(url):
         print(f"下载文件时发生错误: {e}")
         return None
 
-# 替换链接
-def replace_links_in_json(data, old_link_pattern, new_links):
-    def replace_in_dict(d):
-        for key, value in d.items():
-            if isinstance(value, str):  # 如果值是字符串
-                matches = re.findall(old_link_pattern, value)
-                for old_link in matches:
-                    if old_link:  # 确保找到旧链接
-                        # 只替换符合条件的链接
-                        for new_link in new_links:
-                            # 如果链接完全匹配才替换
-                            if old_link in new_link:
-                                print(f"正在替换链接：{old_link} -> {new_link}")
-                                value = value.replace(old_link, new_link)
-                d[key] = value
-            elif isinstance(value, dict):  # 如果值是字典，递归替换
-                replace_in_dict(value)
-            elif isinstance(value, list):  # 如果值是列表，递归替换
-                for idx, item in enumerate(value):
-                    if isinstance(item, dict):
-                        replace_in_dict(item)
-                    elif isinstance(item, str):
-                        matches = re.findall(old_link_pattern, item)
-                        for old_link in matches:
-                            if old_link:  # 确保找到旧链接
-                                for new_link in new_links:
-                                    # 如果链接完全匹配才替换
-                                    if old_link in new_link:
-                                        print(f"替换列表中的链接：{old_link} -> {new_link}")
-                                        item = item.replace(old_link, new_link)
-                        value[idx] = item
-
-    replace_in_dict(data)
+# 替换固定链接
+def replace_fixed_links_in_json(data, new_link):
+    # 直接替换包含固定链接的字段
+    data['首页推荐链接'] = new_link
+    data['首页片单链接加前缀'] = new_link
+    data['分类链接'] = new_link + '/vodtype/{cateId}-{catePg}.html'  # 根据需要添加
+    data['分类片单链接加前缀'] = new_link
+    data['搜索链接'] = new_link + '/index.php/ajax/suggest?mid=1&wd={wd}'
+    data['搜索片单链接加前缀'] = new_link + '/vodplay/'
+    
+    # 如果还需要替换其他字段，可以继续添加
     return data
 
 # 获取文件的 SHA 值
@@ -111,9 +88,6 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 def main():
     json_url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}'
     
-    # 定义匹配旧链接的正则表达式 (例如匹配 http://<数字>ck.cc 格式)
-    old_link_pattern = r'https?://\d+ck\.cc(?:/.*)?'  # 匹配 http:// 或 https:// 和 以数字开头的链接，并允许路径部分
-    
     # 下载 valid_links2.txt 中的所有新链接
     new_links = download_valid_links()
     if not new_links:
@@ -134,7 +108,7 @@ def main():
     print(json.dumps(data, ensure_ascii=False, indent=2))
 
     # 替换链接
-    updated_data = replace_links_in_json(data, old_link_pattern, new_links)
+    updated_data = replace_fixed_links_in_json(data, new_links[0])  # 使用第一个新链接替换
 
     # 打印更新后的 JSON 数据（调试用）
     print("替换后的 JSON 数据：")
