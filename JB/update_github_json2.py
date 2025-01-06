@@ -46,9 +46,12 @@ def replace_links_in_json(data, old_link_pattern, new_links):
                 matches = re.findall(old_link_pattern, value)
                 for old_link in matches:
                     if old_link:  # 确保找到旧链接
+                        # 只替换符合条件的链接
                         for new_link in new_links:
-                            print(f"正在替换链接：{old_link} -> {new_link}")
-                            value = value.replace(old_link, new_link)
+                            # 如果链接完全匹配才替换
+                            if old_link in new_link:
+                                print(f"正在替换链接：{old_link} -> {new_link}")
+                                value = value.replace(old_link, new_link)
                 d[key] = value
             elif isinstance(value, dict):  # 如果值是字典，递归替换
                 replace_in_dict(value)
@@ -61,8 +64,10 @@ def replace_links_in_json(data, old_link_pattern, new_links):
                         for old_link in matches:
                             if old_link:  # 确保找到旧链接
                                 for new_link in new_links:
-                                    print(f"替换列表中的链接：{old_link} -> {new_link}")
-                                    item = item.replace(old_link, new_link)
+                                    # 如果链接完全匹配才替换
+                                    if old_link in new_link:
+                                        print(f"替换列表中的链接：{old_link} -> {new_link}")
+                                        item = item.replace(old_link, new_link)
                         value[idx] = item
 
     replace_in_dict(data)
