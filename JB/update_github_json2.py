@@ -40,15 +40,20 @@ def download_json_file(url):
 
 # 替换链接
 def replace_links_in_json(data, old_link_pattern, new_links):
+    new_links_iter = iter(new_links)  # 创建迭代器
     def replace_in_dict(d):
         for key, value in d.items():
             if isinstance(value, str):  # 如果值是字符串
                 matches = re.findall(old_link_pattern, value)
                 for old_link in matches:
                     if old_link:  # 确保找到旧链接
-                        for new_link in new_links:
+                        try:
+                            new_link = next(new_links_iter)  # 从新链接列表中取一个
                             print(f"正在替换链接：{old_link} -> {new_link}")
                             value = value.replace(old_link, new_link)
+                        except StopIteration:
+                            print("新链接已用完，停止替换。")
+                            break
                 d[key] = value
             elif isinstance(value, dict):  # 如果值是字典，递归替换
                 replace_in_dict(value)
@@ -60,9 +65,13 @@ def replace_links_in_json(data, old_link_pattern, new_links):
                         matches = re.findall(old_link_pattern, item)
                         for old_link in matches:
                             if old_link:  # 确保找到旧链接
-                                for new_link in new_links:
+                                try:
+                                    new_link = next(new_links_iter)  # 从新链接列表中取一个
                                     print(f"替换列表中的链接：{old_link} -> {new_link}")
                                     item = item.replace(old_link, new_link)
+                                except StopIteration:
+                                    print("新链接已用完，停止替换。")
+                                    break
                         value[idx] = item
 
     replace_in_dict(data)
