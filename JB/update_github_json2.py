@@ -1,7 +1,7 @@
 import json
 import requests
-import base64
 import re
+import base64
 import urllib.parse
 import os
 
@@ -11,93 +11,78 @@ REPO_OWNER = 'hjpwyb'
 REPO_NAME = 'yuan'
 FILE_PATH = 'tv/XYQHiker/黄色仓库.json'
 BRANCH_NAME = 'main'
-COMMIT_MESSAGE = '更新链接替换'
+COMMIT_MESSAGE = '批量替换链接'
 VALID_LINKS_FILE_PATH = 'JB/valid_links2.txt'
 
 # URL 编码文件路径
 encoded_file_path = urllib.parse.quote(FILE_PATH)
 
-# 下载 valid_links.txt 中的所有新链接
+# 下载 valid_links2.txt 的所有新链接
 def download_valid_links():
     url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{VALID_LINKS_FILE_PATH}'
     try:
         response = requests.get(url)
         response.raise_for_status()
-        return response.text.splitlines()  # 按行分割并返回链接列表
+        return response.text.splitlines()  # 按行分割链接
     except requests.exceptions.RequestException as e:
-        print(f"下载 valid_links.txt 时发生错误: {e}")
+        print(f"下载 valid_links2.txt 时发生错误: {e}")
         return []
 
-# 下载 GitHub 上的原始文件内容
+# 下载 GitHub 上的 JSON 文件内容
 def download_json_file(url):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # 确保请求成功
-        return response.json()  # 返回解析的 JSON 数据
+        response.raise_for_status()
+        return response.json()  # 返回解析后的 JSON 数据
     except requests.exceptions.RequestException as e:
-        print(f"下载文件时发生错误: {e}")
+        print(f"下载 JSON 文件时发生错误: {e}")
         return None
 
-# 替换链接
+# 替换 JSON 数据中的链接
 def replace_links_in_json(data, old_link_pattern, new_links):
     new_links_iter = iter(new_links)  # 创建迭代器
-    def replace_in_dict(d):
-        for key, value in d.items():
-            if isinstance(value, str):  # 如果值是字符串
-                matches = re.findall(old_link_pattern, value)
-                for old_link in matches:
-                    if old_link:  # 确保找到旧链接
-                        try:
-                            new_link = next(new_links_iter)  # 从新链接列表中取一个
-                            print(f"正在替换链接：{old_link} -> {new_link}")
-                            value = value.replace(old_link, new_link)
-                        except StopIteration:
-                            print("新链接已用完，停止替换。")
-                            break
-                d[key] = value
-            elif isinstance(value, dict):  # 如果值是字典，递归替换
-                replace_in_dict(value)
-            elif isinstance(value, list):  # 如果值是列表，递归替换
-                for idx, item in enumerate(value):
-                    if isinstance(item, dict):
-                        replace_in_dict(item)
-                    elif isinstance(item, str):
-                        matches = re.findall(old_link_pattern, item)
-                        for old_link in matches:
-                            if old_link:  # 确保找到旧链接
-                                try:
-                                    new_link = next(new_links_iter)  # 从新链接列表中取一个
-                                    print(f"替换列表中的链接：{old_link} -> {new_link}")
-                                    item = item.replace(old_link, new_link)
-                                except StopIteration:
-                                    print("新链接已用完，停止替换。")
-                                    break
-                        value[idx] = item
 
-    replace_in_dict(data)
-    return data
+    def replace_recursive(item):
+        if isinstance(item, str):
+            matches = re.findall(old_link_pattern, item)
+            for old_link in matches:
+                try:
+                    new_link = next(new_links_iter)
+                    print(f"替换链接：{old_link} -> {new_link}")
+                    item = item.replace(old_link, new_link)
+                except StopIteration:
+                    print("新链接用完，停止替换。")
+                    break
+            return item
+        elif isinstance(item, dict):
+            return {key: replace_recursive(value) for key, value in item.items()}
+        elif isinstance(item, list):
+            return [replace_recursive(elem) for elem in item]
+        return item
+
+    return replace_recursive(data)
 
 # 获取文件的 SHA 值
 def get_file_sha(repo_owner, repo_name, file_path, branch):
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}?ref={branch}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     try:
-        response = requests.get(url, headers=headers, timeout=30)
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
-        file_info = response.json()
-        return file_info['sha']
+        return response.json()['sha']
     except requests.exceptions.RequestException as e:
-        print(f"无法获取文件 SHA 值: {e}")
+        print(f"获取文件 SHA 值失败: {e}")
         return None
 
-# 更新 GitHub 上的文件内容
-def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, commit_message):
+# 更新 GitHub 上的 JSON 文件
+def update_github_file(repo_owner, repo_name, file_path, updated_data, sha, branch, commit_message):
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    
-    formatted_content = json.dumps(new_data, ensure_ascii=False, indent=2)
-    encoded_content = base64.b64encode(formatted_content.encode('utf-8')).decode('utf-8')
-    
+
+    # 将 JSON 数据转为字符串并编码为 Base64
+    json_content = json.dumps(updated_data, ensure_ascii=False, indent=2)
+    encoded_content = base64.b64encode(json_content.encode('utf-8')).decode('utf-8')
+
     data = {
         "message": commit_message,
         "content": encoded_content,
@@ -106,46 +91,38 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
     }
 
     try:
-        response = requests.put(url, headers=headers, json=data, timeout=30)
+        response = requests.put(url, headers=headers, json=data)
         response.raise_for_status()
-        print("文件已成功更新！")
+        print("文件更新成功！")
     except requests.exceptions.RequestException as e:
         print(f"更新文件时发生错误: {e}")
 
 def main():
     json_url = f'https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}'
     
-    # 定义匹配旧链接的正则表达式 (例如匹配 http://<数字>ck.cc 格式)
-    old_link_pattern = r'https?://\d+ck\.cc(?:/.*)?'  # 匹配 http:// 或 https:// 和 以数字开头的链接，并允许路径部分
+    # 匹配旧链接的正则表达式 (以 http:// 或 https:// 开头，包含数字的域名)
+    old_link_pattern = r'https?://\d+ck\.cc(?:/.*)?'
     
-    # 下载 valid_links.txt 中的所有新链接
+    # 下载新链接
     new_links = download_valid_links()
     if not new_links:
-        print("没有有效链接可用.")
+        print("没有可用的新链接。")
         return
 
-    # 下载 JSON 文件
+    # 下载 JSON 数据
     data = download_json_file(json_url)
     if data is None:
         return
 
-    # 打印原始 JSON 数据（调试用）
-    print("原始 JSON 数据：")
-    print(json.dumps(data, ensure_ascii=False, indent=2))
-
     # 替换链接
     updated_data = replace_links_in_json(data, old_link_pattern, new_links)
 
-    # 打印更新后的 JSON 数据（调试用）
-    print("替换后的 JSON 数据：")
-    print(json.dumps(updated_data, ensure_ascii=False, indent=2))
-
-    # 获取文件的 SHA 值
+    # 获取文件 SHA
     sha = get_file_sha(REPO_OWNER, REPO_NAME, encoded_file_path, BRANCH_NAME)
     if sha is None:
         return
 
-    # 更新 JSON 文件
+    # 更新文件
     update_github_file(REPO_OWNER, REPO_NAME, encoded_file_path, updated_data, sha, BRANCH_NAME, COMMIT_MESSAGE)
 
 if __name__ == "__main__":
