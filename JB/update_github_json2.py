@@ -9,10 +9,10 @@ import os
 GITHUB_TOKEN = os.getenv('YOU_TOKEN')  # 从环境变量中获取 Token
 REPO_OWNER = 'hjpwyb'
 REPO_NAME = 'yuan'
-FILE_PATH = 'tv/XYQHiker/字幕仓库.json'
+FILE_PATH = 'tv/XYQHiker/黄色仓库.json'
 BRANCH_NAME = 'main'
 COMMIT_MESSAGE = '更新链接替换'
-VALID_LINKS_FILE_PATH = 'JB/valid_links.txt'
+VALID_LINKS_FILE_PATH = 'JB/valid_links2.txt'
 
 # URL 编码文件路径
 encoded_file_path = urllib.parse.quote(FILE_PATH)
