@@ -3,8 +3,10 @@ name: Update JSON File
 on:
   push:
     paths:
-      - JB/valid_links.txt  # valid_links.txt 变化时触发
+      - JB/valid_links.txt  # 当 valid_links.txt 变化时触发
   workflow_dispatch:  # 手动触发
+  schedule:
+    - cron: "0 * * * *"  # 每小时运行一次
 
 jobs:
   update-json:
