@@ -75,13 +75,16 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 
 # 主程序
 def main():
-    base_url = "http://6940ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
+    # 基本 URL，使用占位符来动态替换域名部分
+    base_url_template = "http://{domain}/vodtype/9-2.html"  # 使用 {domain} 作为占位符
     valid_links = []  # 存储有效链接
 
-    # 进行试错，依次更换URL中的数字部分
-    for i in range(6940, 6999):  # 假设你想测试7465ck.cc到7474ck.cc这几个域名
-        url_to_test = base_url.replace("7750ck.cc", f"{i}ck.cc")
-        
+    # 修改域名的范围，假设你想测试从6940ck.cc到6999ck.cc
+    for i in range(6940, 6999):
+        domain = f"{i}ck.cc"  # 动态生成新的域名
+        url_to_test = base_url_template.format(domain=domain)  # 替换占位符
+        print(f"Testing URL: {url_to_test}")  # 输出当前测试的 URL
+
         # 检查URL有效性并匹配内容
         valid_url = check_url(url_to_test)
         if valid_url:
