@@ -75,11 +75,11 @@ def update_github_file(repo_owner, repo_name, file_path, new_data, sha, branch, 
 
 # 主程序
 def main():
-    base_url = "http://7940ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
+    base_url = "http://6940ck.cc/vodtype/9-2.html"  # 要测试的基本 URL
     valid_links = []  # 存储有效链接
 
     # 进行试错，依次更换URL中的数字部分
-    for i in range(7940, 7999):  # 假设你想测试7465ck.cc到7474ck.cc这几个域名
+    for i in range(6940, 6999):  # 假设你想测试7465ck.cc到7474ck.cc这几个域名
         url_to_test = base_url.replace("7750ck.cc", f"{i}ck.cc")
         
         # 检查URL有效性并匹配内容
