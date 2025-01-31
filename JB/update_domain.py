@@ -80,7 +80,7 @@ def main():
     valid_links = []  # 存储有效链接
 
     # 修改域名的范围，假设你想测试从6940ck.cc到6999ck.cc
-    for i in range(6100, 6999):
+    for i in range(6100, 6199):
         domain = f"{i}ck.cc"  # 动态生成新的域名
         url_to_test = base_url_template.format(domain=domain)  # 替换占位符
         print(f"Testing URL: {url_to_test}")  # 输出当前测试的 URL
