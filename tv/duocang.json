@@ -2,15 +2,15 @@
 {
     "urls": [
           {
-            "url": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvbox.json",
+            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvbox.json",
             "name": "🔔飞鱼影视"
         },
          {
-            "url": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvbox18.json",
+            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvbox18.json",
             "name": "🔞飞鱼成人"
         },
         {
-            "url": "https://ghproxy.com/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvboxzonghe.json",
+            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/main/tvboxzonghe.json",
             "name": "🔔飞鱼综合"
         },
         {
@@ -37,7 +37,7 @@
             "name": "🚀唐三线路"
         },      
         {
-            "url": "https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
+            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
             "name": "🚀蜂蜜线路"
         },                                                               
         {
