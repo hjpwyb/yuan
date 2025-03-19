@@ -99,7 +99,7 @@ def main():
         # 获取现有的有效链接（从 GitHub 上下载当前 valid_links.txt）
         current_links = []
         if sha:
-            url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}"
+            url = f"https://kenyu.ggff.net/https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH_NAME}/{FILE_PATH}"
             response = requests.get(url)
             if response.status_code == 200:
                 current_links = response.text.splitlines()
