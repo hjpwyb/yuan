@@ -4,7 +4,7 @@ import base64
 from urllib.parse import urlparse
 
 # GitHub 配置
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = os.getenv('YOU_TOKEN')
 REPO_OWNER = 'hjpwyb'  # 仓库拥有者
 REPO_NAME = 'yuan'  # 仓库名称
 BRANCH_NAME = 'main'  # 分支名称
