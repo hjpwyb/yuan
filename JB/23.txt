@@ -1,7 +1,7 @@
 {
 "zhubo": [
 { "address":"http://zwyekzmetla.dyjiaofu.xyz/live/cx_369866.flv","img":"https://02hashoayi.bidmonitoring.xyz/7701/live/images/b7092fb325e6f16dff45c6f13670872d","title":"\u7C89\u5AE9\u8461\u8404"},
-{ "address":"https://raw.githubusercontent.com/hjpwyb/yubo/main/scripts/bbb/180天重启计划/180天重启计划_第1集.m3u","img":"https://raw.githubusercontent.com/hjpwyb/yubo/main/scripts/bbb/180天重启计划/poster.jpg","title":"180天重启计划"},
+{ "address":"https://1080p.huyall.com/play/1aMLvmOe/index.m3u8","img":"https://raw.githubusercontent.com/hjpwyb/yubo/main/scripts/bbb/180天重启计划/poster.jpg","title":"180天重启计划"},
 { "address":"rtmp://sy890.ooo89.top/live/21460_1743761635","img":"http://tpinlk.ouipq.top/upload//thumb/20250404/07971056356042323.png","title":"\u6FB3\u535A\uFF08\u6B63\u5728\u516B\u98DE\uFF09"},
 { "address":"rtmp://sy890.ooo89.top/live/21408_1743762946","img":"http://tpinlk.ouipq.top/upload//thumb/20250404/07971069467641979.png","title":"\u73B0\u573A\u76F4\u64AD%20\u70B8\u91D1\u82B1"},
 { "address":"http://la8asyohjk.mir66.xyz/live/cx_380290.flv","img":"https://02hashoayi.bidmonitoring.xyz/7701/live/images/01edce3ad69d99e033f07a845a7297ee","title":"\u70B9\u70B9\u70B9\u70B9"},
