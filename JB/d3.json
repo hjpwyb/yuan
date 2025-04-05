@@ -1,8 +1,8 @@
-[
- "sites": 
-            {
+{
+    "sites": [
+        {
             "key": "csp_XYQHiker_stripchat直播",
-            "name": "🔞stripchat直播(XYQHiker)",
+            "name": "stripchat直播(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
@@ -16,7 +16,7 @@
         },
         {
             "key": "csp_XYQHiker_bongacams直播",
-            "name": "🔞bongacams直播(XYQHiker)",
+            "name": "bongacams直播(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
@@ -30,7 +30,7 @@
         },
         {
             "key": "csp_XYQHiker_直播大全",
-            "name": "🔞直播大全(XYQHiker)",
+            "name": "直播大全(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
@@ -44,7 +44,7 @@
         },
         {
             "key": "csp_XYQHiker_直播1",
-            "name": "🔞直播1(XYQHiker)",
+            "name": "直播1(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
@@ -58,7 +58,7 @@
         },
         {
             "key": "csp_XYQHiker_直播2",
-            "name": "🔞直播2(XYQHiker)",
+            "name": "直播2(XYQHiker)",
             "type": 3,
             "api": "csp_XYQHiker",
             "searchable": 1,
@@ -155,5 +155,6 @@
             "searchable": 1,
             "changeable": 1,
             "categories": []
-        },
-]
+        }
+    ]
+}
