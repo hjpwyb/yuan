@@ -7,7 +7,7 @@
         "searchable": 1,
         "quickSearch": 0,
         "filterable": 0,
-        "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
         "style": {
             "type": "rect",
             "ratio": 1.6
@@ -21,7 +21,7 @@
         "searchable": 1,
         "quickSearch": 0,
         "filterable": 0,
-        "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
         "style": {
             "type": "rect",
             "ratio": 1.6
@@ -35,7 +35,7 @@
         "searchable": 1,
         "quickSearch": 0,
         "filterable": 0,
-        "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播大全.json",
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播大全.json",
         "style": {
             "type": "rect",
             "ratio": 1.6
@@ -49,7 +49,7 @@
         "searchable": 1,
         "quickSearch": 0,
         "filterable": 0,
-        "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
         "style": {
             "type": "rect",
             "ratio": 1.6
@@ -95,11 +95,12 @@
     {
         "key": "vv004",
         "name": "️👙點播👙",
-        "type": 1,
-        "api": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt",
+        "type": 3,
+        "api": "csp_XYQHiker",
         "searchable": 0,
         "quickSearch": 0,
-        "filterable": 0
+        "filterable": 0,
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt"
     },
     {
         "key": "艾蛋影视",
@@ -147,21 +148,21 @@
         "categories": []
     },
     {
-        "key": "csp_XYQHiker_直播1",
+        "key": "csp_XYQHiker_直播1_v2",
         "name": "🔞直播1(XYQHiker)",
         "type": 3,
         "api": "csp_XYQHiker",
         "searchable": 1,
         "quickSearch": 0,
         "filterable": 0,
-        "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
+        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
         "style": {
             "type": "rect",
             "ratio": 1.6
         }
     },
     {
-        "key": "csp_XYQHiker_直播2",
+        "key": "csp_XYQHiker_直播2_v2",
         "name": "直播2",
         "type": 3,
         "api": "csp_XYQHiker",
