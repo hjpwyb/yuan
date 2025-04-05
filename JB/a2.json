@@ -1,278 +1,250 @@
 [
-    {
-        "key": "csp_XYQHiker_stripchat直播",
-        "name": "stripchat直播(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
-        }
-    },
-    {
-        "key": "csp_XYQHiker_bongacams直播",
-        "name": "bongacams直播(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播大全",
-        "name": "直播大全(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播大全.json",
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播1",
-        "name": "直播1(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播2",
-        "name": "直播2(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": {
-            "规则名": "直播1-XYQHiker",
-            "规则作者": "飞鱼",
-            "请求头参数": "手机",
-            "网页编码格式": "UTF-8",
-            "分类起始页码": "1",
-            "分类链接": "http://api.vipmisss.com:81/mf/jsonDancelife.txt",
-            "分类名称": "直播",
-            "分类名称替换词": "",
-            "分类截取模式": "0",
-            "分类列表数组规则": "zhubo",
-            "分类片单是否Jsoup写法": "1",
-            "分类片单标题": "title",
-            "分类片单链接": "address",
-            "分类片单图片": "img",
-            "分类片单副标题": "Number",
-            "分类片单链接加前缀": "",
-            "分类片单链接加后缀": "",
-            "链接是否直接播放": "1",
-            "分析MacPlayer": "0",
-            "是否开启手动嗅探": "1",
-            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
-            "手动嗅探视频链接过滤词": "baidu.com"
+        {
+            "key": "csp_XYQHiker_stripchat直播",
+            "name": "🔞stripchat直播(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
         },
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
+        {
+            "key": "csp_XYQHiker_bongacams直播",
+            "name": "🔞bongacams直播(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+        },
+        {
+            "key": "csp_XYQHiker_直播大全",
+            "name": "🔞直播大全(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播大全.json",
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+        },
+        {
+            "key": "csp_XYQHiker_直播1",
+            "name": "🔞直播1(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+        },
+        {
+            "key": "csp_XYQHiker_直播2",
+            "name": "🔞直播2(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": {
+                "规则名": "直播1-XYQHiker",
+                "规则作者": "飞鱼",
+                "请求头参数": "手机",
+                "网页编码格式": "UTF-8",
+                "分类起始页码": "1",
+                "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/21.txt",
+                "分类名称": "直播1",
+                "分类名称替换词": "",
+                "分类截取模式": "0",
+                "分类列表数组规则": "zhubo",
+                "分类片单是否Jsoup写法": "1",
+                "分类片单标题": "title",
+                "分类片单链接": "address",
+                "分类片单图片": "img",
+                "分类片单副标题": "Number",
+                "分类片单链接加前缀": "",
+                "分类片单链接加后缀": "",
+                "链接是否直接播放": "1",
+                "分析MacPlayer": "0",
+                "是否开启手动嗅探": "1",
+                "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+                "手动嗅探视频链接过滤词": "baidu.com"
+            },
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+        },
+          {
+            "key": "csp_XYQHiker_直播3",
+            "name": "🔞直播3(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": {
+                "规则名": "直播1-XYQHiker",
+                "规则作者": "飞鱼",
+                "请求头参数": "手机",
+                "网页编码格式": "UTF-8",
+                "分类起始页码": "1",
+                "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/22.txt",
+                "分类名称": "直播3",
+                "分类名称替换词": "",
+                "分类截取模式": "0",
+                "分类列表数组规则": "zhubo",
+                "分类片单是否Jsoup写法": "1",
+                "分类片单标题": "title",
+                "分类片单链接": "address",
+                "分类片单图片": "img",
+                "分类片单副标题": "Number",
+                "分类片单链接加前缀": "",
+                "分类片单链接加后缀": "",
+                "链接是否直接播放": "1",
+                "分析MacPlayer": "0",
+                "是否开启手动嗅探": "1",
+                "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+                "手动嗅探视频链接过滤词": "baidu.com"
+            },
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+         },      
+         {
+            "key": "csp_XYQHiker_直播4",
+            "name": "🔞直播4(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": {
+                "规则名": "直播2-XYQHiker",
+                "规则作者": "飞鱼",
+                "请求头参数": "手机",
+                "网页编码格式": "UTF-8",
+                "分类起始页码": "1",
+                "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/23.txt",
+                "分类名称": "直播4",
+                "分类名称替换词": "",
+                "分类截取模式": "0",
+                "分类列表数组规则": "zhubo",
+                "分类片单是否Jsoup写法": "1",
+                "分类片单标题": "title",
+                "分类片单链接": "address",
+                "分类片单图片": "img",
+                "分类片单副标题": "Number",
+                "分类片单链接加前缀": "",
+                "分类片单链接加后缀": "",
+                "链接是否直接播放": "1",
+                "分析MacPlayer": "0",
+                "是否开启手动嗅探": "1",
+                "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+                "手动嗅探视频链接过滤词": "baidu.com"
+            },
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
+        },             
+        {
+            "key": "vv004",
+            "name": "️👙點播👙",
+            "type": 1,
+            "api": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/00/refs/heads/main/api/00title05155.json",
+            "searchable": 0,
+            "quickSearch": 0,
+            "filterable": 0
+        },
+        {
+            "key": "艾蛋影视",
+            "name": "艾蛋影视",
+            "type": 1,
+            "api": "https://www.lovedan.net/api.php/provide/vod",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "TVB云播",
+            "name": "TVB云播",
+            "type": 1,
+            "api": "http://www.tvyb10.com/api.php/provide/vod/",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "最大资源",
+            "name": "最大",
+            "type": 1,
+            "api": "https://api.zuidapi.com/api.php/provide/vod/from/zuidam3u8/",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "快车资源",
+            "name": "快车",
+            "type": 1,
+            "api": "https://caiji.kczyapi.com/api.php/provide/vod/?ac=list",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "奇虎资源",
+            "name": "奇虎",
+            "type": 1,
+            "api": "http://qihuzy1.com/api.php/provide/vod/",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "华为吧资源",
+            "name": "华为吧",
+            "type": 1,
+            "api": "https://hw8.live/api.php/provide/vod/?ac=list",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "vodimg资源",
+            "name": "vodimg",
+            "type": 1,
+            "api": "https://cj.vodimg.top/api.php/provide/vod/&type=2&mid=1",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
+        },
+        {
+            "key": "49资源",
+            "name": "49",
+            "type": 1,
+            "api": "https://49zy1.com/api.php/provide/vod/?ac=list",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": []
         }
-    },
-    {
-        "key": "vv004",
-        "name": "️👙點播👙",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 0,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt"
-    },
-    {
-        "key": "艾蛋影视",
-        "name": "艾蛋影视",
-        "type": 1,
-        "api": "https://www.lovedan.net/api.php/provide/vod",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    },
-    {
-        "key": "TVB云播",
-        "name": "TVB云播",
-        "type": 1,
-        "api": "http://www.tvyb10.com/api.php/provide/vod/",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    },
-    {
-        "key": "最大资源",
-        "name": "最大",
-        "type": 1,
-        "api": "https://api.zuidapi.com/api.php/provide/vod/from/zuidam3u8/",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    },
-    {
-        "key": "快车资源",
-        "name": "快车",
-        "type": 1,
-        "api": "https://caiji.kczyapi.com/api.php/provide/vod/?ac=list",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    },
-    {
-        "key": "奇虎资源",
-        "name": "奇虎",
-        "type": 1,
-        "api": "http://qihuzy1.com/api.php/provide/vod/",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    },
-    {
-        "key": "csp_XYQHiker_直播1_v2",
-        "name": "🔞直播1(XYQHiker)",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
-        "style": {
-            "type": "rect",
-            "ratio": 1.6
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播2_v2",
-        "name": "直播2",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": {
-            "规则名": "直播1-XYQHiker",
-            "规则作者": "飞鱼",
-            "请求头参数": "手机",
-            "网页编码格式": "UTF-8",
-            "图片是否需要代理": "0",
-            "是否开启获取首页数据": "0",
-            "分类起始页码": "1",
-            "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/21.txt",
-            "分类名称": "直播2",
-            "分类名称替换词": "live",
-            "分类截取模式": "0",
-            "分类列表数组规则": "zhubo",
-            "分类片单是否Jsoup写法": "1",
-            "分类片单标题": "title",
-            "分类片单链接": "address",
-            "分类片单图片": "img",
-            "分类片单副标题": "Number",
-            "分类片单链接加前缀": "",
-            "分类片单链接加后缀": "",
-            "链接是否直接播放": "1",
-            "分析MacPlayer": "0",
-            "是否开启手动嗅探": "1",
-            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
-            "手动嗅探视频链接过滤词": "baidu.com"
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播3",
-        "name": "直播3",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": {
-            "规则名": "直播1-XYQHiker",
-            "规则作者": "飞鱼",
-            "请求头参数": "手机",
-            "网页编码格式": "UTF-8",
-            "图片是否需要代理": "0",
-            "是否开启获取首页数据": "0",
-            "分类起始页码": "1",
-            "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/22.txt",
-            "分类名称": "直播3",
-            "分类名称替换词": "live2",
-            "分类截取模式": "0",
-            "分类列表数组规则": "zhubo",
-            "分类片单是否Jsoup写法": "1",
-            "分类片单标题": "title",
-            "分类片单链接": "address",
-            "分类片单图片": "img",
-            "分类片单副标题": "Number",
-            "分类片单链接加前缀": "",
-            "分类片单链接加后缀": "",
-            "链接是否直接播放": "1",
-            "分析MacPlayer": "0",
-            "是否开启手动嗅探": "1",
-            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
-            "手动嗅探视频链接过滤词": "baidu.com"
-        }
-    },
-    {
-        "key": "csp_XYQHiker_直播4",
-        "name": "直播4",
-        "type": 3,
-        "api": "csp_XYQHiker",
-        "searchable": 1,
-        "quickSearch": 0,
-        "filterable": 0,
-        "ext": {
-            "规则名": "直播1-XYQHiker",
-            "规则作者": "飞鱼",
-            "请求头参数": "手机",
-            "网页编码格式": "UTF-8",
-            "图片是否需要代理": "0",
-            "是否开启获取首页数据": "0",
-            "分类起始页码": "1",
-            "分类链接": "https://raw.githubusercontent.com/yubo211/iptv/refs/heads/master/test/23.txt",
-            "分类名称": "直播4",
-            "分类名称替换词": "live3",
-            "分类截取模式": "0",
-            "分类列表数组规则": "zhubo",
-            "分类片单是否Jsoup写法": "1",
-            "分类片单标题": "title",
-            "分类片单链接": "address",
-            "分类片单图片": "img",
-            "分类片单副标题": "Number",
-            "分类片单链接加前缀": "",
-            "分类片单链接加后缀": "",
-            "链接是否直接播放": "1",
-            "分析MacPlayer": "0",
-            "是否开启手动嗅探": "1",
-            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
-            "手动嗅探视频链接过滤词": "baidu.com"
-        }
-    },
-    {
-        "key": "华为吧资源",
-        "name": "华为吧",
-        "type": 1,
-        "api": "https://hw8.live/api.php/provide/vod/?ac=list",
-        "searchable": 1,
-        "changeable": 1,
-        "categories": []
-    }
 ]
