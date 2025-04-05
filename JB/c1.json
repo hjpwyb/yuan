@@ -1,5 +1,5 @@
-[
-    "sites":         
+{
+    "sites": [
         {
             "key": "csp_XYQHiker_stripchat直播",
             "name": "🔞stripchat直播(XYQHiker)",
@@ -93,7 +93,7 @@
                 "ratio": 1.6
             }
         },
-          {
+        {
             "key": "csp_XYQHiker_直播3",
             "name": "🔞直播3(XYQHiker)",
             "type": 3,
@@ -129,8 +129,8 @@
                 "type": "rect",
                 "ratio": 1.6
             }
-         },      
-         {
+        },
+        {
             "key": "csp_XYQHiker_直播4",
             "name": "🔞直播4(XYQHiker)",
             "type": 3,
@@ -166,7 +166,7 @@
                 "type": "rect",
                 "ratio": 1.6
             }
-        },             
+        },
         {
             "key": "vv004",
             "name": "️👙點播👙",
@@ -248,4 +248,5 @@
             "changeable": 1,
             "categories": []
         }
-]
+    ]
+}
