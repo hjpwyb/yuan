@@ -1,39 +1,108 @@
-{
-    "规则名": "直播1-XYQHiker",
-    "规则作者": "飞鱼",
-    "请求头参数": "手机",
-    "网页编码格式": "UTF-8",
-    "图片是否需要代理": "0",
-    "是否开启获取首页数据": "0",
-    "分类起始页码": "1",
-    "分类链接": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/21.txt",  // 默认加载 21.txt
-    "分类名称": "直播",
-    "分类名称替换词": "live",
-    "分类截取模式": "0",
-    "分类列表数组规则": "zhubo",
-    "分类片单是否Jsoup写法": "1",
-    "分类片单标题": "title",
-    "分类片单链接": "address",
-    "分类片单图片": "img",
-    "分类片单副标题": "Number",
-    "分类片单链接加前缀": "",
-    "分类片单链接加后缀": "",
-    "链接是否直接播放": "1",
-    "筛选数据": {
-        "live": [
-            {
-                "key": "url",  // 使用 "url" 表示动态链接
-                "name": "分类",
-                "value": [
-                    {"v": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/21.txt", "n": "直播1"},
-                    {"v": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/22.txt", "n": "直播2"},
-                    {"v": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt", "n": "直播3"}
-                ]
-            }
-        ]
+[
+    {
+        "key": "csp_XYQHiker_直播",
+        "name": "直播",
+        "type": 3,
+        "api": "csp_XYQHiker",
+        "searchable": 1,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+            "规则名": "直播1-XYQHiker",
+            "规则作者": "飞鱼",
+            "请求头参数": "手机",
+            "网页编码格式": "UTF-8",
+            "图片是否需要代理": "0",
+            "是否开启获取首页数据": "0",
+            "分类起始页码": "1",
+            "分类链接": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/21.txt",
+            "分类名称": "直播",
+            "分类名称替换词": "live",
+            "分类截取模式": "0",
+            "分类列表数组规则": "zhubo",
+            "分类片单是否Jsoup写法": "1",
+            "分类片单标题": "title",
+            "分类片单链接": "address",
+            "分类片单图片": "img",
+            "分类片单副标题": "Number",
+            "分类片单链接加前缀": "",
+            "分类片单链接加后缀": "",
+            "链接是否直接播放": "1",
+            "分析MacPlayer": "0",
+            "是否开启手动嗅探": "1",
+            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+            "手动嗅探视频链接过滤词": "baidu.com"
+        }
     },
-    "分析MacPlayer": "0",
-    "是否开启手动嗅探": "1",
-    "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
-    "手动嗅探视频链接过滤词": "baidu.com"
-}
+    {
+        "key": "csp_XYQHiker_直播2",
+        "name": "直播2",
+        "type": 3,
+        "api": "csp_XYQHiker",
+        "searchable": 1,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+            "规则名": "直播1-XYQHiker",
+            "规则作者": "飞鱼",
+            "请求头参数": "手机",
+            "网页编码格式": "UTF-8",
+            "图片是否需要代理": "0",
+            "是否开启获取首页数据": "0",
+            "分类起始页码": "1",
+            "分类链接": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/22.txt",
+            "分类名称": "直播2",
+            "分类名称替换词": "live2",
+            "分类截取模式": "0",
+            "分类列表数组规则": "zhubo",
+            "分类片单是否Jsoup写法": "1",
+            "分类片单标题": "title",
+            "分类片单链接": "address",
+            "分类片单图片": "img",
+            "分类片单副标题": "Number",
+            "分类片单链接加前缀": "",
+            "分类片单链接加后缀": "",
+            "链接是否直接播放": "1",
+            "分析MacPlayer": "0",
+            "是否开启手动嗅探": "1",
+            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+            "手动嗅探视频链接过滤词": "baidu.com"
+        }
+    },
+    {
+        "key": "csp_XYQHiker_直播3",
+        "name": "直播3",
+        "type": 3,
+        "api": "csp_XYQHiker",
+        "searchable": 1,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+            "规则名": "直播1-XYQHiker",
+            "规则作者": "飞鱼",
+            "请求头参数": "手机",
+            "网页编码格式": "UTF-8",
+            "图片是否需要代理": "0",
+            "是否开启获取首页数据": "0",
+            "分类起始页码": "1",
+            "分类链接": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt",
+            "分类名称": "直播3",
+            "分类名称替换词": "live3",
+            "分类截取模式": "0",
+            "分类列表数组规则": "zhubo",
+            "分类列表数组规则": "zhubo",
+            "分类片单是否Jsoup写法": "1",
+            "分类片单标题": "title",
+            "分类片单链接": "address",
+            "分类片单图片": "img",
+            "分类片单副标题": "Number",
+            "分类片单链接加前缀": "",
+            "分类片单链接加后缀": "",
+            "链接是否直接播放": "1",
+            "分析MacPlayer": "0",
+            "是否开启手动嗅探": "1",
+            "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+            "手动嗅探视频链接过滤词": "baidu.com"
+        }
+    }
+]
