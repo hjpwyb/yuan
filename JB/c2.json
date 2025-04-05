@@ -247,6 +247,34 @@
             "searchable": 1,
             "changeable": 1,
             "categories": []
+        },
+        {
+            "key": "csp_XYQHiker_直播2",
+            "name": "直播2(XYQHiker)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 0,
+            "quickSearch": 0,
+            "filterable": 0,
+            "ext": {
+                "请求头参数": "手机",
+                "网页编码格式": "UTF-8",
+                "分类链接": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/JB/23.txt",
+                "分类截取模式": "0",
+                "分类列表数组规则": "zhubo",
+                "分类片单是否Jsoup写法": "0",
+                "分类片单标题": "title",
+                "分类片单链接": "address",
+                "分类片单图片": "img",
+                "链接是否直接播放": "1",
+                "是否开启手动嗅探": "1",
+                "手动嗅探视频链接关键词": ".m3u8#.mp4#flv#rtmp",
+                "手动嗅探视频链接过滤词": "baidu.com"
+            },
+            "style": {
+                "type": "rect",
+                "ratio": 1.6
+            }
         }
     ]
 }
