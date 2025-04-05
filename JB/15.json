@@ -47,20 +47,6 @@
             }
         },
         {
-            "key": "csp_XYQHiker_直播1",
-            "name": "🔞直播1(XYQHiker)",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/直播1.json",
-            "style": {
-                "type": "rect",
-                "ratio": 1.6
-            }
-        },
-    {
         "key": "csp_XYQHiker_直播1",
         "name": "直播1(XYQHiker)",
         "type": 3,
@@ -96,8 +82,8 @@
             "type": "rect",
             "ratio": 1.6
         }
-    },
-    {
+        },
+        {
         "key": "csp_XYQHiker_直播2",
         "name": "直播2(XYQHiker)",
         "type": 3,
@@ -133,8 +119,8 @@
             "type": "rect",
             "ratio": 1.6
         }
-    },
-    {
+        },
+        {
         "key": "csp_XYQHiker_直播3",
         "name": "直播3(XYQHiker)",
         "type": 3,
@@ -169,7 +155,8 @@
         "style": {
             "type": "rect",
             "ratio": 1.6
-        },
+        }
+        }
         {
             "key": "艾蛋影视",
             "name": "艾蛋影视",
