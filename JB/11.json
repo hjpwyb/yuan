@@ -1,8 +1,8 @@
 {
     "wallpaper": "https://picsum.photos/1080/",
-    "spider": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xyq.jar",
-    "logo": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/美.gif",
-    "homeLogo": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/美.gif",
+    "spider": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xyq.jar",
+    "logo": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/美.gif",
+    "homeLogo": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/美.gif",
     "sites": [
         {
             "key": "csp_XYQHiker_stripchat直播",
@@ -12,7 +12,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/stripchat直播.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -26,7 +26,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/bongacams直播.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -40,7 +40,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/直播大全.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/直播大全.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -54,7 +54,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/直播1.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/直播1.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -709,7 +709,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/170av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/170av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -723,7 +723,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hanime1.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hanime1.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -737,7 +737,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/动漫后宫.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/动漫后宫.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -751,7 +751,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jiedm.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jiedm.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -765,7 +765,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xtoons.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xtoons.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -779,7 +779,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/动漫pro.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/动漫pro.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -793,7 +793,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/acg漫画网.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/acg漫画网.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.33
@@ -807,7 +807,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/avbebe.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/avbebe.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.33
@@ -817,8 +817,8 @@
             "key": "drpy_js_Missav",
             "name": "Missav测试[js]",
             "type": 3,
-            "api": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/js/apiv19drpy2.min.js",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/js/Missav.js"
+            "api": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/js/apiv19drpy2.min.js",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/js/Missav.js"
         },
         {
             "key": "csp_XYQHiker_AV兄弟",
@@ -828,7 +828,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av兄弟.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av兄弟.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.8
@@ -842,7 +842,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/云老婆.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/云老婆.json",
             "style": {
                 "type": "rect",
                 "ratio": 0.75
@@ -856,7 +856,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/亚色影库.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/亚色影库.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.8
@@ -870,7 +870,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/17吃瓜.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/17吃瓜.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -884,7 +884,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91吃瓜.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91吃瓜.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -898,7 +898,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18jav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18jav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -912,7 +912,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/字幕仓库.json",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/字幕仓库.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -926,7 +926,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/黄色仓库.json",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/黄色仓库.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -940,7 +940,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/黄色仓库啦.json",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/refs/heads/main/tv/XYQHiker/黄色仓库啦.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -954,7 +954,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/酷爱成人网.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/酷爱成人网.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -968,7 +968,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/444咖啡.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/444咖啡.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -982,7 +982,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/b影院.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/b影院.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -996,7 +996,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/p影院.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/p影院.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1010,7 +1010,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hohoj.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hohoj.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1024,7 +1024,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆社.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆社.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1038,7 +1038,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xgroovy.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xgroovy.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1052,7 +1052,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/私房tv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/私房tv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1066,7 +1066,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/asianssex.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/asianssex.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1080,7 +1080,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hdpornmovies.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/hdpornmovies.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1094,7 +1094,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/playav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/playav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1108,7 +1108,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/qinav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/qinav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1122,7 +1122,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/4hu.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/4hu.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1136,7 +1136,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91hd.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91hd.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1150,7 +1150,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/有爱爱.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/有爱爱.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.75
@@ -1165,7 +1165,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javmunu.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javmunu.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1179,7 +1179,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/u9a9.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/u9a9.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1193,7 +1193,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/airav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/airav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1207,7 +1207,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/玩偶姐姐.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/玩偶姐姐.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1221,7 +1221,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ggjav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ggjav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1235,7 +1235,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/日日撸.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/日日撸.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1249,7 +1249,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/中国性味.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/中国性味.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1263,7 +1263,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/鉴黄师.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/鉴黄师.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1277,7 +1277,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/正妹av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/正妹av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1291,7 +1291,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/porn87.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/porn87.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1305,7 +1305,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/亚洲色吧.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/亚洲色吧.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1319,7 +1319,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/owoav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/owoav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1333,7 +1333,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/丽丽av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/丽丽av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1347,7 +1347,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/朱古力.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/朱古力.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1361,7 +1361,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/好色tv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/好色tv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1375,7 +1375,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javdb.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javdb.json"
         },
         {
             "key": "csp_XYQHiker_紫色成人",
@@ -1385,7 +1385,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/紫色成人.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/紫色成人.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1399,7 +1399,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xHamster.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xHamster.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1413,7 +1413,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jav233.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jav233.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1427,7 +1427,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/台湾kiss.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/台湾kiss.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1441,7 +1441,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xvideos.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/xvideos.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1455,7 +1455,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/spankbang.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/spankbang.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1469,7 +1469,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/pornhub.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/pornhub.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1483,7 +1483,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ppp.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ppp.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1497,7 +1497,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/soporn.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/soporn.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1511,7 +1511,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/avple.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/avple.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1525,7 +1525,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/supjav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/supjav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1539,7 +1539,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/cableav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/cableav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1553,7 +1553,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/moav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/moav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1567,7 +1567,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/netflav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/netflav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1581,7 +1581,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av6k.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av6k.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1595,7 +1595,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/苹果av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/苹果av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1609,7 +1609,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/weav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/weav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1623,7 +1623,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javbus.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javbus.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1637,7 +1637,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆视频91md.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆视频91md.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1651,7 +1651,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/视色.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/视色.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1665,7 +1665,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/kanav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/kanav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1679,7 +1679,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/色库tv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/色库tv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1693,7 +1693,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/5x社区.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/5x社区.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1731,7 +1731,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/私密公寓.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/私密公寓.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1745,7 +1745,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/motv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/motv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1759,7 +1759,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆映画.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆映画.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1881,7 +1881,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/红桃视频.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/红桃视频.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1895,7 +1895,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小嫂子av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小嫂子av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1909,7 +1909,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/热骚.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/热骚.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1923,7 +1923,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ixxxj.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ixxxj.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1937,7 +1937,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小丑撸.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小丑撸.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1951,7 +1951,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆集.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆集.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1965,7 +1965,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆区.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆区.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1979,7 +1979,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆影视.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆影视.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -1993,7 +1993,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/少女社.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/少女社.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2007,7 +2007,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/御姐诱惑.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/御姐诱惑.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2021,7 +2021,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/怡红院.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/怡红院.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2035,7 +2035,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/missav.app.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/missav.app.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2049,7 +2049,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/missav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/missav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2063,7 +2063,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/thisav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/thisav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2077,7 +2077,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/njav.com.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/njav.com.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2091,7 +2091,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/njav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/njav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2105,7 +2105,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jable.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/jable.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2119,7 +2119,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/tktube.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/tktube.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2133,7 +2133,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/杏吧视频.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/杏吧视频.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2147,7 +2147,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/一起草.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/一起草.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2161,7 +2161,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javffm.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javffm.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2175,7 +2175,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/dbro.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/dbro.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2189,7 +2189,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/170av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/170av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2203,7 +2203,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/youjizz.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/youjizz.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2217,7 +2217,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ujizzcn.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/ujizzcn.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2231,7 +2231,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/pornlulu.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/pornlulu.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2245,7 +2245,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn_asia.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn_asia.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.75
@@ -2259,7 +2259,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porny.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porny.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2273,7 +2273,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2287,7 +2287,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn永久.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91porn永久.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2301,7 +2301,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av淘宝.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/av淘宝.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2315,7 +2315,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/taiav.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/taiav.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2329,7 +2329,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/nowavtv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/nowavtv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2343,7 +2343,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/六九娱乐.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/六九娱乐.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2357,7 +2357,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/sexsex.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/sexsex.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2371,7 +2371,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/234av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/234av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2385,7 +2385,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/anyavme.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/anyavme.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2399,7 +2399,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/鲨鱼av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/鲨鱼av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2413,7 +2413,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2427,7 +2427,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javtsunami.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/javtsunami.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2441,7 +2441,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/rouvide.json",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/rouvide.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2455,7 +2455,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小湿妹av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小湿妹av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2469,7 +2469,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆视频mao.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/麻豆视频mao.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2483,7 +2483,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/banantv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/banantv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2497,7 +2497,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/番号鸽.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/番号鸽.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2511,7 +2511,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91在线视频.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/91在线视频.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2525,7 +2525,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/久久热.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/久久热.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2551,7 +2551,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18jtv.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/18jtv.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2565,7 +2565,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/madoucun.json"
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/madoucun.json"
         },
         {
             "key": "csp_XYQHiker_星空传媒",
@@ -2575,7 +2575,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/星空传媒.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/星空传媒.json"
         },
         {
             "key": "csp_xBPQ_精东影业",
@@ -2586,8 +2586,8 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/jdyyxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/jdyyxxx.json"
         },
         {
             "key": "csp_xBPQ_精东影视",
@@ -2598,8 +2598,8 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/jdyy1xxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/jdyy1xxx.json"
         },
         {
             "key": "csp_xBPQ_色最色x",
@@ -2610,8 +2610,8 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/xpbq/色最色xbpq.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/xpbq/色最色xbpq.json"
         },
         {
             "key": "csp_XYQHiker_小黄书x",
@@ -2622,7 +2622,7 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小黄书.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/小黄书.json"
         },
         {
             "key": "csp_XYQHiker_水果派",
@@ -2633,7 +2633,7 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/水果派.json"
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/水果派.json"
         },
         {
             "key": "csp_XYQHiker_爱上av",
@@ -2643,7 +2643,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/爱上av.json",
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/爱上av.json",
             "style": {
                 "type": "rect",
                 "ratio": 1.6
@@ -2657,7 +2657,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/色最色.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/色最色.json"
         },
         {
             "key": "csp_XYQHiker_300分类",
@@ -2667,7 +2667,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/300分类.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/300分类.json"
         },
         {
             "key": "csp_xBPQ_麻豆映画",
@@ -2678,8 +2678,8 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/yinghua.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/yinghua.json"
         },
         {
             "key": "csp_xBPQ_麻豆映画2",
@@ -2690,8 +2690,8 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/mdyhxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/mdyhxxx.json"
         },
         {
             "key": "csp_xBPQ_搞aa",
@@ -2702,8 +2702,8 @@
             "quickSearch": 1,
             "filterable": 0,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/gaoaaxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/gaoaaxxx.json"
         },
         {
             "key": "csp_xBPQ_右手",
@@ -2713,8 +2713,8 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/yousxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/yousxxx.json"
         },
         {
             "key": "csp_xBPQ_床吧搜索",
@@ -2725,8 +2725,8 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/cbssxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/cbssxxx.json"
         },
         {
             "key": "csp_xBPQ_麻豆女优",
@@ -2737,8 +2737,8 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/madou1.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/madou1.json"
         },
         {
             "key": "csp_xBPQ_天天综合",
@@ -2749,8 +2749,8 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/ttzh.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/ttzh.json"
         },
         {
             "key": "csp_xBPQ_bannan",
@@ -2761,8 +2761,8 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/bananxxx.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/bananxxx.json"
         },
         {
             "key": "csp_xBPQ_香蕉",
@@ -2772,8 +2772,8 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/xiangj.json"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xbpq.jar",
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/xiangj.json"
         },
         {
             "key": "csp_biubiu_mdxsp",
@@ -2783,7 +2783,7 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/18/mdxsp.json"
+            "ext": "https://raw.githubusercontent.com/hjpwyb/yuan/main/18/mdxsp.json"
         },
         {
             "key": "csp_XYQHiker_麻豆小视频",
@@ -2793,7 +2793,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://kenyu.ggff.net/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/mdxsp-xyqh.json"
+            "ext": "https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/XYQHiker/mdxsp-xyqh.json"
         },
         {
             "key": "奥斯卡资源",
@@ -3055,7 +3055,7 @@
             "key": "*麻豆区测试🔞",
             "name": "*麻豆区测试🔞",
             "type": 1,
-            "api": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/md111.json",
+            "api": "https://raw.githubusercontent.com/hjpwyb/yuan/main/md111.json",
             "searchable": 1,
             "quickSearch": 1
         },
@@ -3124,7 +3124,7 @@
             "quickSearch": 1,
             "searchable": 1,
             "type": 3,
-            "jar": "https://kenyu.ggff.net/https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xxx.jar"
+            "jar": "https://raw.githubusercontent.com/hjpwyb/yuan/main/jar/xxx.jar"
         },
         {
             "key": "*黄色资源🔞",
@@ -3695,7 +3695,7 @@
                 {
                     "name": "redirect",
                     "urls": [
-                        "proxy://do=live&type=txt&ext=https://yubou.us.kg/https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/做爱大全.txt"
+                        "proxy://do=live&type=txt&ext=https://raw.githubusercontent.com/wanganni/yinshiyuan/refs/heads/main/tv/做爱大全.txt"
                     ]
                 }
             ]
