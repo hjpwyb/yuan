@@ -17,7 +17,7 @@ def check_url(url):
         response = requests.get(url, timeout=10)  # 设置超时为 10 秒
         if response.status_code == 200:
             # 检查页面内容是否包含指定文本
-            if "24小时在线匹配首次免费" in response.text:
+            if "动漫剧情" in response.text:
                 print(f"Valid domain found with matching content: {url}")
                 return url
             else:
@@ -80,7 +80,7 @@ def main():
     valid_links = []  # 存储有效链接
 
     # 修改域名的范围，假设你想测试从6940ck.cc到6999ck.cc
-    for i in range(8500, 8599):
+    for i in range(8000, 8099):
         domain = f"{i}ck.cc"  # 动态生成新的域名
         url_to_test = base_url_template.format(domain=domain)  # 替换占位符
         print(f"Testing URL: {url_to_test}")  # 输出当前测试的 URL
